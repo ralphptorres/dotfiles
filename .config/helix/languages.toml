@@ -1,0 +1,39 @@
+[language-server]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.texlab.config.texlab]
+build.forwardSearchAfter = true
+build.onSave = true
+chktex.onEdit = true
+chktex.onOpenAndSave = true
+forwardSearch.executable = "zathura"
+forwardSearch.args = ["--synctex-forward", "%l:1:%f", "%p"]
+bibtexFormatter = "texlab"
+latexFormatter = "tex-fmt" # or texlab
+
+[[language]]
+name = "bash"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "latex"
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+'$' = '$'
+
+[[language]]
+name = "markdown"
+language-servers = ["markdown-oxide"]
+
+[[language]]
+name = "python"
+language-servers = ["ruff"]

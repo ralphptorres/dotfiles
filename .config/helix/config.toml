@@ -1,0 +1,15 @@
+theme = "base16_default"
+
+[editor]
+
+line-number = "relative"
+rulers = [80,100]
+
+lsp.display-inlay-hints = true
+indent-guides.render = true
+soft-wrap.enable = true
+smart-tab.supersede-menu = true
+
+[keys.normal.' ']
+
+'=' = ":reflow"
