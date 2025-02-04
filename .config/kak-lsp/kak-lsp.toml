@@ -1,0 +1,114 @@
+snippet_support = true
+verbosity = 2
+
+[server]
+
+timeout = 1800
+
+[language.bash]
+
+filetypes = ["sh"]
+roots = [".git"]
+command = "bash-language-server"
+args = ["start"]
+
+[language.c_cpp]
+
+filetypes = ["c","cpp"]
+roots = ["compile_commands.json", ".clangd", ".git"]
+command = "clangd"
+
+[language.css]
+
+filetypes = ["css","scss"]
+roots = [".git"]
+command = "vscode-css-languageserver"
+args = ["--stdio"]
+
+[language.html]
+filetypes = ["html","svg"]
+roots = [".git"]
+command = "vscode-html-languageserver"
+args = ["--stdio"]
+
+[language.json]
+filetypes = ["js"]
+roots = [".git"]
+command = "vscode-json-languageserver"
+args = ["--stdio"]
+
+[language.go]
+filetypes = ["go"]
+roots = ["Gopkg.toml", "go.mod", ".git"]
+command = "gopls"
+settings_section = "_"
+
+[language.go.settings._]
+
+[language.latex]
+
+filetypes = ["latex"]
+roots = [".git"]
+command = "texlab"
+settings_section = "_"
+
+# https://github.com/latex-lsp/texlab/wiki/Configuration
+[language.latex.settings._.build]
+onSave = true
+forwardSearchAfter = true
+[language.latex.settings._.chktex]
+onOpenAndSave = true
+onEdit = true
+[language.latex.settings._.forwardSearch]
+forwardSearch.executable = "zathura"
+forwardSearch.args = [
+    "%p", "--synctex-forward", "%l:1:%f", "--synctex-editor-command",
+    """sh -c '
+        echo "evaluate-commands -client %opt{texlab_client} %{
+        evaluate-commands -try-client %opt{jumpclient} %{
+        edit -- %{input} %{line} }}" | kak -p $kak_session
+    '"""
+]
+
+[language.python]
+
+filetypes = ["python"]
+roots = ["requirements.txt", "setup.py", ".git"]
+command = "pylsp"
+settings_section = "_"
+
+# refer: https://github.com/python-lsp/python-lsp-server#configuration
+[language.python.settings._] 
+
+[language.rust]
+
+filetypes = ["rust"]
+roots = ["Cargo.toml", ".git"]
+command = "rust-analyzer"
+settings_section = "_"
+
+# refer: https://rust-analyzer.github.io/manual.html#configuration
+[language.rust.settings._]
+hoverActions.enable = false
+
+[language.zig]
+
+filetypes = ["zig"]
+roots = ["build.zig", ".git"]
+command = "zls"
+
+[semantic_tokens]
+
+faces = [
+    {face="documentation", token="comment", modifiers=["documentation"]},
+    {face="comment", token="comment"},
+    {face="function", token="function"},
+    {face="keyword", token="keyword"},
+    {face="module", token="namespace"},
+    {face="operator", token="operator"},
+    {face="string", token="string"},
+    {face="type", token="type"},
+    {face="default+d", token="variable", modifiers=["readonly"]},
+    {face="default+d", token="variable", modifiers=["constant"]},
+    {face="variable", token="variable"},
+]
