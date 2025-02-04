@@ -1,7 +1,9 @@
+# TODO: add ramp
 ol: &ol {overline: {size: 2, color: fafef9ff}}
 ul: &ul {underline: {size: 2, color: fafef9ff}}
 oul: &oul {stack: [*ol, *ul]}
 
+# TODO: fix font size, emoji color
 bar:
   height: 30
   location: bottom
@@ -15,6 +17,7 @@ bar:
     width: 10
     color: 0b0e0dff
 
+  # TODO: add river orientation
   left:
     - river:
         anchors:
@@ -36,10 +39,12 @@ bar:
               focused: {map: {<<: *rid, deco: *ul}}
               occupied: {map: {<<: *rid}}
 
+  # TODO: add yquery (pacman, weather, media)
   center:
     - label:
         content: {empty: {}}
 
+  # TODO: add yquery (coffee), backlight, battery, cpu, mem, network, pipewire, removables
   right:
     - clock:
         time-format: "%H%M"
