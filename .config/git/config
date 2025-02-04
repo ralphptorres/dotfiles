@@ -1,0 +1,14 @@
+[user]
+name = Ralph Torres
+email = mail@ralphptorr.es
+
+[init]
+defaultBranch = main
+
+[core]
+abbrev = 12
+
+[pretty]
+fixes = Fixes: %h (\"%s\")
+[credential]
+	helper = cache
