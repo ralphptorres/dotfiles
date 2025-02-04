@@ -1,0 +1,51 @@
+ol: &ol {overline: {size: 2, color: fafef9ff}}
+ul: &ul {underline: {size: 2, color: fafef9ff}}
+oul: &oul {stack: [*ol, *ul]}
+
+bar:
+  height: 30
+  location: bottom
+  background: 0b0e0dff # k tees
+  spacing: 10
+  margin: 10
+  font: monospace:style=light:size=14
+  foreground: fafef9ff # w tix0
+
+  border:
+    width: 10
+    color: 0b0e0dff
+
+  left:
+    - river:
+        anchors:
+          - base: &rid
+              margin: 5
+              default: {empty: {}}
+              conditions:
+                id < 10: {string: {text: "{id}"}}
+                id == 10: {string: {text: "*"}}
+        title: {string: {text: " {title}", max: 30}}
+        content:
+          map:
+            on-click:
+              left: sh -c "riverctl set-focused-tags $((1 << ({id} - 1)))"
+              right: sh -c "riverctl toggle-focused-tags $((1 << ({id} -1)))"
+            conditions:
+              urgent && focused: {map: {<<: *rid, deco: *oul}}
+              urgent: {map: {<<: *rid, deco: *ol}}
+              focused: {map: {<<: *rid, deco: *ul}}
+              occupied: {map: {<<: *rid}}
+
+  center:
+    - label:
+        content: {empty: {}}
+
+  right:
+    - clock:
+        time-format: "%H%M"
+        date-format: "%a %m%d"
+        utc: true
+        content:
+          - string: {text: "{date} {time}"}
+    - label:
+        content: {string: {text: "🦊🐧"}}
