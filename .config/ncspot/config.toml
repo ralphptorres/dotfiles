@@ -1,0 +1,38 @@
+flip_status_indicators = true
+audio_cache = true
+audio_cache_size = 5000 # 5 Gb
+notify = true
+bitrate = 320
+statusbar_format = '%artists, "%title", %album'
+
+[track_format]
+left = "%title"
+center = "%album - %artists"
+right = "%saved %duration"
+
+[notification_format]
+title = "%title"
+body = "%artists - %album"
+
+[theme]
+# background = "black"
+primary = "white"
+# secondary = "black"
+title = "white"
+# cmdline = "black"
+cmdline_bg = "blue"
+error = "black"
+# error_bg = "red"
+highlight = "white"
+highlight_bg = "blue"
+playing = "blue"
+# playing_bg = "black"
+playing_selected = "white"
+search_match = "blue"
+statusbar = "white"
+# statusbar_bg = "black"
+statusbar_progress = "blue"
+
+[credentials]
+password_cmd = "rbw get spotify"
+username_cmd = "rbw get spotify --field user"
