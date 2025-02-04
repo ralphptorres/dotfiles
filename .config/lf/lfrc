@@ -1,0 +1,44 @@
+set dircounts true
+set dupfilefmt '%b-%n%e'
+set ifs "\n"
+set info size
+set mouse true
+set period 15
+set previewer ~/.local/bin/previewer
+set sixel true
+
+map R :rename; cmd-end; cmd-delete-home
+map <a-r> bulk-rename
+map I $qlmanage -p $f
+
+map a push :mkdir<space>
+map A push :mkfile<space>
+map D $trash-put $fx
+map <a-d> $trash-restore
+map f fuzzy
+map <a-f> fzf-rg
+map gl %lf -remote "send $id select '$(readlink $f)'"
+map J :updir; set dironly true; down; set dironly false; open
+map K :updir; set dironly true; up; set dironly false; open
+
+map zs :set info size; set dircounts!
+map zz calcdirsize
+map xp recol
+map xx $curl -F"file=@$fx" https://0x0.st | wl-copy
+
+cmd on-cd &printf "\033]0; $PWD\007" > /dev/tty
+cmd mkdir %mkdir -p "$@"
+cmd mkfile %touch "$@"
+cmd fuzzy ${{
+    sel=$(find . -print0 | fzf --read0)
+    [ -z "$sel" ] && exit
+    [ -d "$sel" ] && cmd=cd || cmd=select
+    sel=$(printf %s "$sel" | sed 's/\\/\\\\/g;s/"/\\"/g')
+    lf -remote "send $id $cmd \"$sel\""
+}}
+cmd recol %{{
+    if [ $lf_preview = true ]
+    then lf -remote "send $id :set preview false; set ratios 1:1:1:2"
+    else lf -remote "send $id :set preview true; set ratios 1:2:3"
+    fi
+}}
