@@ -1,0 +1,24 @@
+# refer: /usr/share/doc/ncmpcpp/config
+
+mpd_music_dir = ~/home/aud
+lyrics_directory = ~/home/aud/lyrics
+fetch_lyrics_for_current_song_in_background = yes
+store_lyrics_in_song_dir = yes
+external_editor = $EDITOR
+
+screen_switcher_mode = playlist, media_library
+song_columns_list_format = (20)[]{A} (3f)[]{NE} (50)[]{t|f:Title} (20)[]{b} (7f)[]{l}
+song_library_format = {{%n. }{%t}$R{ %y}{ %l}}|{%f}
+media_library_primary_tag = album_artist
+media_library_albums_split_by_date = no
+
+main_window_color = default
+current_item_prefix = $(blue)$r
+current_item_suffix = $/r$(end)
+progressbar_look = ==-
+progressbar_color = default
+progressbar_elapsed_color = blue:b
+display_bitrate = yes
+song_status_format = {{%a, }{"%t,"}{ %b}{ (%y)}}|{%f}
+song_window_title_format = {{%A, }{"%t"}{ (%y)}}|{%f}
+execute_on_song_change = notifier-mpd
