@@ -1,0 +1,22 @@
+--write-description
+--write-info-json
+# --no-write-comments
+
+--write-thumbnail
+
+# -f FORMAT
+# -S SORTORDER
+# --prefer-free-formats
+
+--write-subs
+--write-auto-subs
+
+# --audio-format best
+--audio-quality 0
+# --keep-video
+--embed-subs
+--embed-thumbnail
+--embed-metadata
+--embed-chapters
+
+-o ~/home/vid/youtube/%(uploader)s/%(playlist)s/%(title)s.%(ext)s
