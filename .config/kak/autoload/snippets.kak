@@ -1,0 +1,1 @@
+/home/ralph/home/src/occivink/kakoune-snippets/snippets.kak

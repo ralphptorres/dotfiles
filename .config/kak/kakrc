@@ -1,0 +1,81 @@
+set-option global autowrap_column 80
+set-option global indentwidth 4
+set-option global tabstop 4
+set-option global startup_info_version 20221012
+set-option global modelinefmt '%val{bufname}
+(%val{cursor_char_column},%val{cursor_line})
+{{context_info}}[{{mode_info}}][%val{client}][%val{session}]'
+
+set-face global Information blue,black
+set-face global LineNumberCursor default,default+b
+set-face global LineNumbersWrapped black
+set-face global MenuBackground blue
+set-face global MenuForeground blue+b
+
+add-highlighter global/ column '%opt{autowrap_column}' default,blue
+add-highlighter global/ number-lines -hlcursor -relative -min-digits 3 -separator ' '
+add-highlighter global/ regex \b(FIXME|NOTE|TODO|XXX)\b 0:default+br
+add-highlighter global/ show-whitespaces -lf ' ' -nbsp ' ' -spc ' ' -tab '|'
+add-highlighter global/ wrap -indent
+
+hook global WinCreate ^[^*]+$ %{
+    editorconfig-load
+}
+hook global BufWritePre .* %{ try %{
+    format-buffer
+}}
+hook global ModuleLoaded wayland %{
+    set-option global termcmd 'footclient sh -c'
+}
+
+evaluate-commands %sh{ kak-lsp --kakoune -s $kak_session }
+hook global WinSetOption filetype=(c|cpp|go|latex|python|rust) %{
+    lsp-enable-window
+    hook window BufWritePre .* lsp-formatting-sync
+}
+hook global WinSetOption filetype=rust %{
+    hook window -group rust-inlay-hints BufWritePost .* %{
+        rust-analyzer-inlay-hints
+    }
+    hook -once -always window WinSetOption filetype=.* %{
+        remove-hooks window rust-inlay-hints
+    }
+}
+
+hook global WinDisplay .* %{ git show-diff }
+
+map global user 3 ': comment-line<ret>'    -docstring 'comment line'
+map global user '#' ': comment-block<ret>' -docstring 'comment block'
+map global user * ': snippets-expand-trigger<ret>' -docstring 'expand snippets'
+map global user 0 ': echo %sh{wc -w <lt><lt><lt> "$kak_selection"}<ret>' -docstring 'wc'
+map global user = '|fmt -w $kak_opt_autowrap_column<ret>' -docstring 'wrap to 80 or n'
+map global user y '<a-|>wl-copy<ret>'      -docstring 'yank to clip'
+map global user G ':grep '                 -docstring 'grep'
+map global user p '<a-!>wl-paste -n<ret>'  -docstring 'paste append clip'
+map global user P '!wl-paste -n<ret>'      -docstring 'paste prepend clip'
+map global user b ': make<ret>'            -docstring 'make'
+map global user l ': enter-user-mode lsp<ret>' -docstring 'enter lsp'
+
+declare-user-mode gdb
+map global user g ': enter-user-mode gdb<ret>' -docstring 'enter gdb'
+map global gdb n ': gdb-next<ret>'             -docstring 'next'
+map global gdb s ': gdb-step<ret>'             -docstring 'step'
+map global gdb c ': gdb-continue<ret>'         -docstring 'continue'
+
+declare-user-mode spell
+map global user s ': enter-user-mode spell<ret>' -docstring 'enter spell'
+map global spell s ': spell<ret>'                -docstring 'spell'
+map global spell n ': spell-next<ret>'           -docstring 'next'
+map global spell c ': spell-clear<ret>'          -docstring 'clear'
+map global spell r ': spell-replace<ret>'        -docstring 'replace'
+
+nop %sh{
+    rc_run="$kak_runtime/autoload"
+    rc_usr="$kak_config/autoload"
+    src="$HOME/home/src"
+    [ -d "$rc_usr" ] || mkdir -p "$rc_usr"
+    [ -h "$rc_usr/std" ] || ln -s "$rc_run" "$rc_usr/std"
+
+    plug=occivink/kakoune-snippets/snippets.kak
+    [ -h "$rc_usr/${plug##*/}" ] || ln -s "$src/$plug" "$rc_usr"
+}
