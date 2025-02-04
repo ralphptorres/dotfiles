@@ -13,3 +13,6 @@ smart-tab.supersede-menu = true
 [keys.normal.' ']
 
 '=' = ":reflow"
+'.' = ":pipe-to tmux load-buffer - \\; paste-buffer -dpr \\; send-keys Enter"
+',' = "@/^#<space>%%<ret>Ni#<esc>nF<ret>;vg.<esc>_<space>.un"
+'>' = ":sh footclient tmux new -n repl '. ./../../.venv/bin/activate; ipython'"
