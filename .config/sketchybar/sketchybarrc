@@ -1,0 +1,159 @@
+#!/bin/sh
+
+cbg=0xfd120d06
+cfg=0xfff5e2de
+cac=0xffe09700
+fic="Noto Emoji:Regular:13.0"
+flb="Drafting Mono:Regular:13.0"
+
+sketchybar --bar \
+    color=0x00000000 \
+    position=bottom  \
+    height=30        \
+    sticky=on        \
+    y_offset=8       \
+
+sketchybar --default \
+    updates=when_shown           \
+    icon.color=$cfg              \
+    icon.font="$fic"             \
+    icon.padding_left=10         \
+    icon.padding_right=0         \
+    label.color=$cfg             \
+    label.font="$flb"            \
+    label.padding_left=10        \
+    label.padding_right=10       \
+    label.max_chars=30           \
+    background.color=$cbg        \
+    background.height=30         \
+    background.border_color=$cac \
+    background.border_width=0    \
+    background.corner_radius=10  \
+    background.padding_left=16   \
+    background.padding_right=0   \
+
+pos=left
+
+name=space
+set -- 1 2 3 4 5 6 7 8 9
+sid=0
+for win in "$@"
+do sid=$((sid+1))
+    sketchybar --add $name $name.$sid $pos \
+        --set $name.$sid associated_space=$sid icon.drawing=off label="$win" \
+            script='sketchybar --set $NAME background.border_width=1 \
+                background.padding_left=5 background.drawing=$SELECTED' \
+            click_script="skhd -k ctrl\ -\ $sid"
+done
+sketchybar --add bracket spaces "/$name\..*/"
+
+# name=window_title
+# sketchybar --add item $name $pos \
+#     --subscribe $name front_app_switched \
+#     --set $name icon.drawing=off script='sketchybar --set $NAME label="$INFO"'
+ 
+name=weather
+script="$(cat << 'eof'
+    export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+
+    report=${XDG_DATA_HOME:-$HOME/.local/share}/weather.txt
+    age=$(( ($(date +%s) - $(stat -c %Y $report)) / 3600 ))
+    sketchybar --set $NAME icon.drawing=on icon=📰 label="$age h ago"
+
+    set -- "" Berlin Cracow
+    cities=$(echo "$@" | tr ' ' ,)
+    data=$(curl -s wttr.in/{$cities}?format=1 | tr -d ' +CF' | tr '\n' ' ')
+    for city in "$@"
+    do info="$info${data%% *}$(echo $city | cut -b1-2) " ; data=${data#* }
+    done
+
+    sketchybar --set $NAME icon.drawing=off label="$info"
+
+    curl -s v2.wttr.in > $report
+eof)"
+sketchybar --add item $name $pos \
+    --set $name update_freq=900 icon.drawing=off \
+        script="$script" \
+        click_script='alacritty msg create-window -e ${PAGER:-bat} \
+            ${XDG_DATA_HOME:-$HOME/.local/share}/weather.txt'
+
+pos=right
+
+# name=clock
+# sketchybar --add item $name $pos \
+#     --set $name update_freq=60 icon.drawing=off \
+#         script='sketchybar --set $NAME label="$(date "+%a %m%d %H%M")"'
+
+# TODO: replace top with ps maybe?
+name=cpu
+script="$(cat << 'eof'
+    cpu=$(top -l3 | grep ^CPU | tail -n1 | tr -d '[:alpha:],: ' | tr % '\n' | \
+        cut -d. -f1 | tr '\n' +)
+    cpu=${cpu%++}
+    cpu=$(( (${cpu%+*}) * 100 / ($cpu) ))
+    mem=$(memory_pressure | grep -o '[0-9]\+%')
+    dsk=$(df | grep -o '[0-9]\+%' | head -n1)
+    # dsk=$(df -H | tr -s ' ' | cut -d ' ' -f4 | head -n2 | tail -n1)
+
+    sketchybar --set $NAME label="CMD ${cpu%\%} ${mem%\%} ${dsk%\%}"
+eof)"
+sketchybar --add item $name $pos \
+    --set $name update_freq=10 icon.drawing=off \
+        script="$script" click_script="$script"
+
+# XXX: sketchybar doesn't pass $INFO to click_script like it does with script
+# so we manually set the app to enable play-pause clicking for
+name=media
+script="$(cat << 'eof'
+    cbg=0xfd120d06
+    cfg=0xfff5e2de
+    cac=0xffe09700
+    app=$(echo "$INFO" | jq -r .app)
+    info=$(echo "$INFO" | jq -r '.title + " - " + .artist + " - " + .album')
+
+    [ $(echo "$INFO" | jq -r .state) = playing ] && icon="⏸️" || icon="▶️"
+
+    case "$app" in
+        (Music) sketchybar --set $NAME background.color=0xfdfc4057 \
+            icon.color=$cfg label.color=$cfg ;;
+        (Spotify) sketchybar --set $NAME background.color=0xfd0fd769 \
+            icon.color=$cbg label.color=$cbg ;;
+        (*) sketchybar --set $NAME background.color=$cbg \
+            icon.color=$cfg label.color=$cfg ;;
+    esac
+
+    sketchybar --set $NAME icon=$icon label="$info"
+eof)"
+sketchybar --add item $name $pos \
+    --subscribe $name media_change \
+    --set $name updates=on \
+        script="$script" \
+        click_script='app=spotify
+            osascript -e "tell application \"$app\" to playpause"'
+
+name=notify.mail
+sketchybar --add item $name $pos \
+    --set $name updates=on update_freq=900 drawing=off \
+        click_script='open -a mail' \
+        script="$(cat << 'eof'
+            if pgrep -qx Mail
+            then
+                n=$(osascript -e 'tell application "Mail" to get unread count of Inbox')
+                if [ $n -gt 0 ]
+                then sketchybar --set $NAME drawing=on icon=📧 label=$n
+                else sketchybar --set $NAME drawing=off
+                fi
+            fi
+eof)"
+
+# XXX: `brew outdated` output is suppressed when non-interactive so we can't count n
+name=notify.brew
+sketchybar --add item $name $pos \
+    --set $name updates=on update_freq=21600 drawing=off \
+        script='brew outdated --greedy && \
+            sketchybar --set $NAME drawing=on icon=📦 label=/' \
+        click_script='open -na alacritty --args --hold -e brew update && brew upgrade'
+
+# sketchybar --add bracket notifs "/notify\..*/"
+
+sketchybar --update
