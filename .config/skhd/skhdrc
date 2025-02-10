@@ -1,0 +1,92 @@
+rcmd         - escape : ''
+rcmd         - 0x32 : ''
+rcmd         - 1 : skhd -k 'ctrl - 1'
+rcmd         - 2 : skhd -k 'ctrl - 2'
+rcmd         - 3 : skhd -k 'ctrl - 3'
+rcmd         - 4 : skhd -k 'ctrl - 4'
+rcmd         - 5 : skhd -k 'ctrl - 5'
+rcmd         - 6 : skhd -k 'ctrl - 6'
+rcmd         - 7 : skhd -k 'ctrl - 7'
+rcmd         - 8 : ''
+rcmd         - 9 : ''
+rcmd         - 0 : ''
+rcmd + shift - 1 : yabai -m window --space 1
+rcmd + shift - 2 : yabai -m window --space 2
+rcmd + shift - 3 : yabai -m window --space 3
+rcmd + shift - 4 : yabai -m window --space 4
+rcmd + shift - 5 : yabai -m window --space 5
+rcmd + shift - 6 : yabai -m window --space 6
+rcmd + shift - 7 : yabai -m window --space 7
+rcmd + shift - 8 : yabai -m window --space 8
+rcmd + shift - 9 : yabai -m window --space 9
+rcmd + shift - 0 : yabai -m window --space 10
+rcmd         - 0x1B : yabai -m window --toggle expose
+rcmd + shift - 0x1B : yabai -m window --minimize
+rcmd         - 0x18 : yabai -m space --toggle mission-control
+rcmd + shift - 0x18 : yabai -m space --toggle show-desktop
+rcmd         - backspace : skhd -k 'fn - n' # notification center
+rcmd + shift - backspace : skhd -k 'fn - c' # control center
+
+rcmd         - tab :  ''
+rcmd         - q : yabai -m window --close || skhd -k 'cmd - w'
+rcmd         - w : ''
+rcmd         - e : yabai --restart-service
+rcmd + shift - e : yabai --stop-service || yabai --start-service
+rcmd         - r : sketchybar --reload
+rcmd + shift - r : sketchybar --update
+rcmd         - t : skhd --restart-service
+rcmd + shift - t : skhd --stop-service
+rcmd         - y : ''
+rcmd         - u : ''
+rcmd         - i : ''
+rcmd         - o : ''
+rcmd         - p : ''
+rcmd         - 0x21 : ''
+rcmd         - 0x1E : ''
+rcmd         - 0x2A : ''
+
+rcmd         - a : ''
+rcmd         - s : yabai -m window --toggle split
+rcmd + shift - s : yabai -m space --mirror y-axis
+rcmd         - d : yabai -m window --toggle zoom-parent
+rcmd         - f : yabai -m window --toggle zoom-fullscreen
+rcmd + shift - f : yabai -m window --toggle native-fullscreen
+rcmd         - g : yabai -m space --balance
+rcmd + shift - g : skhd -k 'cmd + alt - d' && yabai -m space --toggle gap --toggle padding
+rcmd         - h : yabai -m window first --ratio rel:-0.05
+rcmd         - l : yabai -m window first --ratio rel:+0.05
+rcmd + shift - h : yabai -m window --warp west
+rcmd + shift - l : yabai -m window --warp east
+rcmd         - j : yabai -m window --focus next || yabai -m window --focus first
+rcmd         - k : yabai -m window --focus prev || yabai -m window --focus last
+rcmd + shift - j : yabai -m window --swap next || yabai -m window --swap first
+rcmd + shift - k : yabai -m window --swap prev || yabai -m window --swap last
+rcmd         - 0x29 : skhd -k 'ctrl - left'
+rcmd         - 0x27 : skhd -k 'ctrl - right'
+rcmd + shift - 0x29 : yabai -m window --space prev --focus
+rcmd + shift - 0x27 : yabai -m window --space next --focus
+rcmd         - return : yabai -m window --swap first || yabai -m window --swap next --focus first
+rcmd + shift - return : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+rcmd         - z : open -a dictionary
+rcmd         - x : ''
+rcmd         - c : ~/.local/bin/termwrap calcurse
+rcmd         - v : ~/.local/bin/termwrap lf
+rcmd         - b : open -a qutebrowser
+rcmd         - n : ~/.local/bin/termwrap quick note
+rcmd         - m : ~/.local/bin/termwrap aerc
+rcmd + shift - c : open -a calendar
+rcmd + shift - v : open -a finder
+rcmd + shift - b : open -a safari
+rcmd + shift - n : open -a obsidian
+rcmd + shift - m : open -a mail
+rcmd         - 0x2B : ~/.local/bin/termwrap fuzz book
+rcmd         - 0x2F : ~/.local/bin/termwrap fuzz pass
+rcmd         - 0x2C : ~/.local/bin/termwrap fuzz emoji
+
+rcmd         - space : alacritty msg create-window || open -na alacritty
+rcmd + shift - space : open -na alacritty
+rcmd         - up : ''
+rcmd         - down : ''
+rcmd         - left : ''
+rcmd         - right : ''
