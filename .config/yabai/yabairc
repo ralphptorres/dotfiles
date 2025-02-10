@@ -1,0 +1,30 @@
+#!/bin/sh
+
+yabai -m config \
+    external_bar          off         \
+    focus_follows_mouse   autofocus   \
+    window_placement      first_child \
+    insert_feedback_color 0x00ffffff  \
+    split_ratio           0.50        \
+    split_type            horizontal  \
+    auto_balance          on          \
+
+yabai -m config \
+    layout                bsp         \
+    top_padding           16          \
+    bottom_padding        16          \
+    left_padding          16          \
+    right_padding         16          \
+    window_gap            16          \
+
+yabai -m rule --add space=^1 app='Books|Calendar|Music|Reminder|Spotify|TV'
+yabai -m rule --add space=^2 app='Firefox|Mail|Obsidian|Safari'
+yabai -m rule --add manage=off app='Camera Preview|qlmanage|Rnote'
+yabai -m rule --add manage=off app=Alacritty title=quick
+yabai -m rule --add manage=off app=Finder subrole='Quick Look'
+yabai -m rule --add manage=off grid=4:4:1:1:2:2 app=Dictionary
+yabai -m rule --add manage=off grid=4:4:1:1:2:2 app=Finder subrole=AXStandardWindow
+
+yabai -m window first --toggle split --focus first
+
+sketchybar &
