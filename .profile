@@ -21,7 +21,7 @@ export JUPYTER_CONFIG_DIR=$XDG_CONFIG_HOME/jupyter
 export DOT_SAGE=$XDG_CONFIG_HOME/sage
 
 export PATH=$PYENV_ROOT/shims:$PATH:$GOPATH/bin:$RUSTUP_HOME/bin:$CARGO_HOME/bin
-export PATH:$GOPATH/bin:$RUSTUP_HOME/bin:$CARGO_HOME/bin
+export PATH=$PATH:$GOPATH/bin:$RUSTUP_HOME/bin:$CARGO_HOME/bin
 export PATH=$HOME/.local/bin/$(uname -s):$HOME/.local/bin:$PATH
 
 [ -f $XDG_CONFIG_HOME/$(uname -s).profile ] && . $XDG_CONFIG_HOME/$(uname -s).profile
