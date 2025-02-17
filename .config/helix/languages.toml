@@ -4,6 +4,10 @@
 command = "ruff"
 args = ["server"]
 
+[language-server.pylyzer]
+command = "pylyzer"
+args = ["--server"]
+
 [language-server.texlab.config.texlab]
 build.forwardSearchAfter = true
 build.onSave = true
@@ -36,4 +40,4 @@ language-servers = ["markdown-oxide"]
 
 [[language]]
 name = "python"
-language-servers = ["ruff"]
+language-servers = ["ruff", "pylyzer"]
