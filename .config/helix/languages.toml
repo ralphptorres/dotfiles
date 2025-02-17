@@ -8,6 +8,10 @@ args = ["server"]
 command = "pylyzer"
 args = ["--server"]
 
+[language-server.rust-analyzer.config]
+cargo.features = "all"
+check.command = "clippy"
+
 [language-server.texlab.config.texlab]
 build.forwardSearchAfter = true
 build.onSave = true
