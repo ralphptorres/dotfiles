@@ -52,8 +52,32 @@ bar:
     - label:
         content: {empty: {}}
 
-  # TODO: add yquery (coffee), backlight, cpu, mem, network, pipewire, removables
+  # TODO: add yquery (coffee), backlight, cpu, mem, pipewire, removables
   right:
+    - network:
+        poll-interval: 250
+        spacing: 5
+        anchors:
+          - base: &speed
+              map:
+                conditions:
+                  state != up: {string: {text: "*"}}
+                  state == up:
+                    - ramp: {items: *rmp, tag: dl-speed, max: 50000000} # 50 Mbps
+                    - ramp: {items: *rmp, tag: ul-speed, max: 50000000}
+        content:
+          - map:
+              conditions:
+                name == wlan0 && ssid != "":
+                  - string: {text: "🛜"}
+                  - ramp: {items: *rmp, tag: quality}
+                  - <<: *speed
+                  - string: {text: "{ssid}", max: 3}
+                name == enp0s20f0u1c4i2:
+                  - string: {text: "📶"}
+                  - <<: *speed
+                name == wlan0:
+                  - string: {text: "🛜"}
     - battery:
         name: BAT0
         poll-interval: 2000
