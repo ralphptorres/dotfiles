@@ -1,7 +1,15 @@
-# TODO: add ramp
 ol: &ol {overline: {size: 2, color: fafef9ff}}
 ul: &ul {underline: {size: 2, color: fafef9ff}}
 oul: &oul {stack: [*ol, *ul]}
+rmp: &rmp # ⡀⣀⣄⣤⣦⣶⣷⣿ ⢀⣀⣠⣤⣴⣶⣾⣿
+  - string: {text: "⡀"}
+  - string: {text: "⣀"}
+  - string: {text: "⣄"}
+  - string: {text: "⣤"}
+  - string: {text: "⣦"}
+  - string: {text: "⣶"}
+  - string: {text: "⣷"}
+  - string: {text: "⣿"}
 
 # TODO: fix font size, emoji color
 bar:
