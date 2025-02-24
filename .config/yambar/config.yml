@@ -52,8 +52,14 @@ bar:
     - label:
         content: {empty: {}}
 
-  # TODO: add yquery (coffee), backlight, cpu, mem, pipewire, removables
+  # TODO: add yquery (coffee), backlight, mem, pipewire, removables
   right:
+    - cpu:
+        content:
+          - map:
+              conditions:
+                id < 0: {string: {text: "🧮"}}
+          - ramp: {items: *rmp, tag: cpu}
     - network:
         poll-interval: 250
         spacing: 5
