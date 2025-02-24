@@ -52,8 +52,13 @@ bar:
     - label:
         content: {empty: {}}
 
-  # TODO: add yquery (coffee), backlight, pipewire, removables
+  # TODO: add yquery (coffee), pipewire, removables
   right:
+    - backlight:
+        name: acpi_video0
+        content:
+          - string: {text: "🔆"}
+          - ramp: {items: *rmp, tag: percent}
     - mem:
         content:
           - string: {text: "🗄"}
