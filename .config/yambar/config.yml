@@ -52,8 +52,31 @@ bar:
     - label:
         content: {empty: {}}
 
-  # TODO: add yquery (coffee), pipewire, removables
+  # TODO: add yquery (coffee), removables
   right:
+    - pipewire:
+        anchors:
+          - base: &icon
+              default: {string: {text: "{type} {form_factor} {icon}"}}
+              conditions:
+                type == sink:
+                  map:
+                    conditions:
+                      form_factor == speaker:    {string: {text: "🔊"}}
+                      form_factor == headphones: {string: {text: "🎧"}}
+                      form_factor == headset:    {string: {text: "🎧"}}
+                type == source:
+                  map:
+                    conditions:
+                      form_factor == mic:        {string: {text: "🎤"}}
+                      form_factor == headset:    {string: {text: "🎙"}}
+        content:
+          - map:
+              left-margin: 10
+              conditions:
+                ~muted: {map: {<<: *icon}}
+                muted:  {map: {<<: *icon, deco: *ul}}
+          - ramp: {items: *rmp, tag: cubic_volume}
     - backlight:
         name: acpi_video0
         content:
