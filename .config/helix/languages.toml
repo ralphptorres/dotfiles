@@ -22,12 +22,16 @@ forwardSearch.args = ["--synctex-forward", "%l:1:%f", "%p"]
 bibtexFormatter = "texlab"
 latexFormatter = "tex-fmt" # or texlab
 
+[language-server.typos-lsp]
+command = "typos-lsp"
+
 [[language]]
 name = "bash"
 indent = { tab-width = 4, unit = "\t" }
 
 [[language]]
 name = "latex"
+language-servers = ["texlab", "typos-lsp"]
 
 [language.auto-pairs]
 '(' = ')'
@@ -40,7 +44,7 @@ name = "latex"
 
 [[language]]
 name = "markdown"
-language-servers = ["markdown-oxide"]
+language-servers = ["markdown-oxide", "typos-lsp"]
 
 [[language]]
 name = "python"
