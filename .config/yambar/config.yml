@@ -52,8 +52,25 @@ bar:
     - label:
         content: {empty: {}}
 
-  # TODO: add yquery (coffee), backlight, battery, cpu, mem, network, pipewire, removables
+  # TODO: add yquery (coffee), backlight, cpu, mem, network, pipewire, removables
   right:
+    - battery:
+        name: BAT0
+        poll-interval: 2000
+        content:
+          - map:
+              conditions:
+                state == discharging:  {string: {text: "🔋"}}
+                state == charging:     {string: {text: "⚡"}}
+                state == full:         {string: {text: "🔌"}}
+                state == unknown:      {string: {text: "🔌*"}}
+                state == not_charging: {string: {text: "🔌*"}}
+          - ramp: {items: *rmp, tag: capacity, max: 70}
+          - map:
+              default: {string: {text: " {capacity}"}}
+              conditions:
+                state == discharging || state == charging:
+                  - string: {text: " {capacity} {estimate}"}
     - clock:
         time-format: "%H%M"
         date-format: "%a %m%d"
