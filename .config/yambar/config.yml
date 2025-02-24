@@ -52,8 +52,12 @@ bar:
     - label:
         content: {empty: {}}
 
-  # TODO: add yquery (coffee), backlight, mem, pipewire, removables
+  # TODO: add yquery (coffee), backlight, pipewire, removables
   right:
+    - mem:
+        content:
+          - string: {text: "🗄"}
+          - ramp: {items: *rmp, tag: percent_used}
     - cpu:
         content:
           - map:
