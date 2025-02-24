@@ -16,7 +16,7 @@ bar:
   height: 30
   location: bottom
   background: 0b0e0dff # k tees
-  spacing: 10
+  spacing: 5
   margin: 10
   font: monospace:style=light:size=14
   foreground: fafef9ff # w tix0
