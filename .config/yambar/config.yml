@@ -58,7 +58,5 @@ bar:
         time-format: "%H%M"
         date-format: "%a %m%d"
         utc: true
-        content:
-          - string: {text: "{date} {time}"}
-    - label:
-        content: {string: {text: "🦊🐧"}}
+        content: {string: {text: "{date} {time}"}}
+    - label: {content: {string: {text: "🦊🐧"}}}
