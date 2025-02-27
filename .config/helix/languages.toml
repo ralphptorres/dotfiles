@@ -45,6 +45,7 @@ language-servers = ["texlab", "typos-lsp"]
 [[language]]
 name = "markdown"
 language-servers = ["markdown-oxide", "typos-lsp"]
+comment-tokens = ["-", "*", "- [ ]", ">"]
 
 [[language]]
 name = "python"
