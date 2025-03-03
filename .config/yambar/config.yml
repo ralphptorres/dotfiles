@@ -140,4 +140,11 @@ bar:
         utc: true
         content: {string: {text: "{date} {time}"}}
     - label: {content: {string: {text: "|"}}}
-    - label: {content: {string: {text: "🦊🐧"}}}
+    - label:
+        content:
+          string:
+            on-click:
+              left: quick wall
+              right: pkill -USR1 swayidle
+              middle: sh -c "killall yambar && yambar"
+            text: "🦊🐧"
