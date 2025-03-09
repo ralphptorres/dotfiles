@@ -32,6 +32,8 @@ then
     # export MOZ_ENABLE_WAYLAND=1      # firefox
     # export SAL_USE_VCLPLUGIN=gtk4    # libreoffice, buggy tho
     export XDG_CURRENT_DESKTOP=river # xdpw 
+    export XCURSOR_THEME=BreezeX-Light
+    export XCURSOR_SIZE=32
 
     exec river
 fi

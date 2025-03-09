@@ -127,8 +127,7 @@ riverctl border-width           1
 riverctl focus-follows-cursor   normal
 riverctl hide-cursor timeout    0
 riverctl set-cursor-warp        disabled
-# riverctl xcursor-theme          Adwaita 32
-riverctl xcursor-theme          BreezeX-RosePineDawn-Linux 32
+riverctl xcursor-theme          BreezeX-Light 32
 
 riverctl set-repeat 50 300
 riverctl keyboard-layout -options caps:swapescape,ctrl:swap_ralt_rctl,shift:both_capslock us
@@ -142,7 +141,7 @@ rivertile -view-padding 0 -outer-padding 0 -main-location left -main-count 1 -ma
 # libadwaita-without-adwaita then set gtk-theme instead
 # gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
-gsettings set org.gnome.desktop.interface cursor-theme BreezeX-RosePineDawn-Linux 
+gsettings set org.gnome.desktop.interface cursor-theme BreezeX-Light
 gsettings set org.gnome.desktop.interface cursor-size 32
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river # for xdpw
 
