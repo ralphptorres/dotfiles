@@ -1,2 +1,15 @@
 [viewer]
-window=#0b0e0df3
+window = #0b0e0df3
+scale = fill
+
+[list]
+all = yes
+
+[keys.viewer]
+h = step_left 10
+j = step_down 10
+k = step_up 10
+l = step_right 10
+Ctrl+p = prev_file
+Ctrl+n = next_file
+Shift+Space = prev_file
