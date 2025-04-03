@@ -55,6 +55,12 @@ bar:
               urgent: {map: {<<: *rid, deco: *ol}}
               focused: {map: {<<: *rid, deco: *ul}}
               occupied: {map: {<<: *rid}}
+    - script:
+        path: /home/ralph/.local/bin/yquery
+        args: ["lyrics"]
+        content:
+          - string: {text: "🎼"}
+          - string: {text: "{lyric}"}
 
   # TODO: add yquery (pacman, weather)
   center:
