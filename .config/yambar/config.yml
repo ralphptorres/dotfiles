@@ -10,8 +10,7 @@ rmp: &rmp # ⡀⣀⣄⣤⣦⣶⣷⣿ ⢀⣀⣠⣤⣴⣶⣾⣿
   - string: {text: "⣶"}
   - string: {text: "⣷"}
   - string: {text: "⣿"}
-prg: &prg
-# ⣏⣿⡷⣉⣹ ⠯⠿⠗⠭⠽ ⠦⠶⠦⠤⠴
+prg: &prg # ⣏⣿⡷⣉⣹ ⠯⠿⠗⠭⠽ ⠦⠶⠦⠤⠴
   start:     {string: {text: ""}}
   end:       {string: {text: "⣹"}}
   fill:      {string: {text: "⣿"}}
@@ -56,7 +55,7 @@ bar:
               focused: {map: {<<: *rid, deco: *ul}}
               occupied: {map: {<<: *rid}}
     - script:
-        path: /home/ralph/.local/bin/yquery
+        path: ~/.local/bin/yquery
         args: ["lyrics"]
         content:
           - string: {text: "🎼"}
@@ -68,7 +67,7 @@ bar:
         content: {empty: {}}
     - script:
         poll-interval: 1000
-        path: /home/ralph/.local/bin/yquery
+        path: ~/.local/bin/yquery
         args: ["music"]
         content:
           - map:
