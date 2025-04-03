@@ -10,6 +10,15 @@ rmp: &rmp # ⡀⣀⣄⣤⣦⣶⣷⣿ ⢀⣀⣠⣤⣴⣶⣾⣿
   - string: {text: "⣶"}
   - string: {text: "⣷"}
   - string: {text: "⣿"}
+prg: &prg
+# ⣏⣿⡷⣉⣹ ⠯⠿⠗⠭⠽ ⠦⠶⠦⠤⠴
+  start:     {string: {text: ""}}
+  end:       {string: {text: "⣹"}}
+  fill:      {string: {text: "⣿"}}
+  empty:     {string: {text: "⣉"}}
+  indicator: {string: {text: "⡷"}}
+  font: monospace:style=extrabold:size=5
+  length: 50
 
 # TODO: fix font size, emoji color
 bar:
@@ -47,10 +56,39 @@ bar:
               focused: {map: {<<: *rid, deco: *ul}}
               occupied: {map: {<<: *rid}}
 
-  # TODO: add yquery (pacman, weather, media)
+  # TODO: add yquery (pacman, weather)
   center:
     - label:
         content: {empty: {}}
+    - script:
+        poll-interval: 1000
+        path: /home/ralph/.local/bin/yquery
+        args: ["music"]
+        content:
+          - map:
+              default:
+                string:
+                  on-click: footclient -e ncspot
+                  text: "🎵"
+              conditions:
+                set:
+                  - map:
+                      on-click: playerctl play-pause
+                      default: {empty: {}}
+                      conditions:
+                        progset:
+                          progress-bar: {<<: *prg, tag: progval}
+                  - map:
+                      on-click: playerctl play-pause
+                      conditions:
+                        status == Playing: {string: {text: "⏸️"}}
+                        status == Paused:  {string: {text: "▶️"}}
+                  - string:
+                      on-click:
+                        left: playerctl next
+                        right: playerctl previous
+                      text: "⏭️"
+                  - string: {text: "{metadata}"}
 
   # TODO: add yquery (coffee), removables
   right:
@@ -145,6 +183,6 @@ bar:
           string:
             on-click:
               left: quick wall
-              right: pkill -USR1 swayidle
-              middle: sh -c "killall yambar && yambar"
+              right: sh -c "killall yambar && yambar"
+              middle: pkill -USR1 swayidle
             text: "🦊🐧"
