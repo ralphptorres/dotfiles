@@ -33,7 +33,6 @@ bar:
     width: 10
     color: 0b0e0dff
 
-  # TODO: add river orientation
   left:
     - river:
         anchors:
@@ -43,7 +42,16 @@ bar:
               conditions:
                 id < 10: {string: {text: "{id}"}}
                 id == 10: {string: {text: "*"}}
-        title: {string: {text: " {title}", max: 30}}
+        title:
+          - map:
+              margin: 5
+              conditions:
+                mode == passthrough: {string: {text: "🔄"}}
+                layout == "rivertile - top": {string: {text: "⬆️"}}
+                layout == "rivertile - left": {string: {text: "⬅️"}}
+                layout == "rivertile - right": {string: {text: "➡️"}}
+                layout == "rivertile - bottom": {string: {text: "⬇️"}}
+          - string: {text: "{title}", max: 30}
         content:
           map:
             on-click:
