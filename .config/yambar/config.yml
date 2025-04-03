@@ -16,7 +16,7 @@ prg: &prg # ⣏⣿⡷⣉⣹ ⠯⠿⠗⠭⠽ ⠦⠶⠦⠤⠴
   fill:      {string: {text: "⣿"}}
   empty:     {string: {text: "⣉"}}
   indicator: {string: {text: "⡷"}}
-  font: monospace:style=extrabold:size=5
+  font: monospace:style=extrabold:size=4
   length: 50
 
 # TODO: fix font size, emoji color
