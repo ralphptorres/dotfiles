@@ -22,6 +22,15 @@ forwardSearch.args = ["--synctex-forward", "%l:1:%f", "%p"]
 bibtexFormatter = "texlab"
 latexFormatter = "tex-fmt" # or texlab
 
+[language-server.tinymist]
+command = "tinymist"
+
+[language-server.tinymist.config]
+exportPdf = "onType"
+formatterProseWrap = true
+lint.enabled = true
+lint.when = "onSave"
+
 [language-server.typos-lsp]
 command = "typos-lsp"
 
@@ -50,3 +59,7 @@ comment-tokens = ["-", "*", "- [ ]", ">"]
 [[language]]
 name = "python"
 language-servers = ["ruff", "pylyzer"]
+
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
