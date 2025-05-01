@@ -1,5 +1,5 @@
-ol: &ol {overline: {size: 2, color: fafef9ff}}
-ul: &ul {underline: {size: 2, color: fafef9ff}}
+ol: &ol {overline: {size: 2, color: 0b0e0dff}}
+ul: &ul {underline: {size: 2, color: 0b0e0dff}}
 oul: &oul {stack: [*ol, *ul]}
 rmp: &rmp # ⡀⣀⣄⣤⣦⣶⣷⣿ ⢀⣀⣠⣤⣴⣶⣾⣿
   - string: {text: "⡀"}
@@ -23,15 +23,15 @@ prg: &prg # ⣏⣿⡷⣉⣹ ⠯⠿⠗⠭⠽ ⠦⠶⠦⠤⠴
 bar:
   height: 30
   location: bottom
-  background: 0b0e0dff # k tees
+  background: fafef9ff # w tix0
   spacing: 5
   margin: 10
   font: monospace:style=light:size=14
-  foreground: fafef9ff # w tix0
+  foreground: 0b0e0dff # k tees
 
   border:
     width: 10
-    color: 0b0e0dff
+    color: fafef9ff
 
   left:
     - river:
