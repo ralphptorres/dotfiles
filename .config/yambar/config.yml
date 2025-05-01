@@ -23,7 +23,7 @@ prg: &prg # ⣏⣿⡷⣉⣹ ⠯⠿⠗⠭⠽ ⠦⠶⠦⠤⠴
 bar:
   height: 30
   location: bottom
-  background: fafef9ff # w tix0
+  background: fafef9e6 # w tix0
   spacing: 5
   margin: 10
   font: monospace:style=light:size=14
@@ -31,7 +31,7 @@ bar:
 
   border:
     width: 10
-    color: fafef9ff
+    color: fafef900
 
   left:
     - river:
