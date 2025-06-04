@@ -1,5 +1,5 @@
-set default-bg rgba(11,14,13,0.95) # k tees
-set default-fg rgba(250,254,249,0.95) # w tix0
+set default-bg rgba(250,254,249,0.95) # w tix0
+set default-fg rgba(11,14,13,0.95) # k tees
 set font 'monospace normal 12'
 set guioptions v
 
@@ -8,8 +8,8 @@ set first-page-column 1:1
 set highlight-active-color rgba(0,164,255,0.9) # b case0
 set highlight-color rgba(0,164,255,0.5)
 set recolor true
-set recolor-darkcolor rgba(250,254,249,0.95)
-set recolor-lightcolor rgba(11,14,13,0)
+set recolor-darkcolor rgba(11,14,13,0.95)
+set recolor-lightcolor rgba(250,254,249,0)
 set recolor-keephue true
 set selection-clipboard clipboard
 set synctex-editor-command "texlab inverse-search -i %{input} -l %{line}"
