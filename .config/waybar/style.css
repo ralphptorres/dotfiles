@@ -1,0 +1,34 @@
+@define-color c-tix0 #fafef9;
+@define-color c-tix1 #e9efe9;
+@define-color c-tix2 #dae0d5;
+@define-color c-tees #0b0e0d;
+@define-color c-shot #ba4843;
+
+* {
+  /* font-family: monospace; */
+  font-family: Cozette;
+  font-size: 1.4rem;
+}
+
+window#waybar {
+  background-color: alpha(@c-tix0, 0.9);
+  border-right: 0.2rem solid @c-tix0;
+}
+
+.modules-left {
+  margin: 1.5rem 0.4rem;
+}
+
+#tags * {
+  font-size: 2.1rem;
+}
+
+#tags button {
+  margin: 0;
+  padding: 0;
+}
+
+#tags button.focused,
+#tags button.urgent {
+  font-weight: bold;
+}

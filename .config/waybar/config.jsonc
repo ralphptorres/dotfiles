@@ -1,0 +1,11 @@
+[
+	{
+		"layer": "top",
+		"output": "eDP-1",
+		"position": "right",
+		"width": 59,
+		"spacing": 10,
+		"mode": "dock",
+		"reload_style_on_change": true,
+	}
+]
