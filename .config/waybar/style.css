@@ -15,10 +15,17 @@ window#waybar {
   border-right: 0.2rem solid @c-tix0;
 }
 
-.modules-left {
+.modules-left,
+.modules-right {
   margin: 1.5rem 0.4rem;
 }
 
+#custom-quit,
+#custom-lock,
+#custom-poweroff,
+#custom-reboot,
+#custom-wallpaper,
+#clock,
 #tags * {
   font-size: 2.1rem;
 }

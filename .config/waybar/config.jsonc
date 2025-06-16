@@ -9,6 +9,7 @@
 		"reload_style_on_change": true,
 
 		"modules-left": ["river/tags", "river/window"],
+		"modules-right": ["group/clock"],
 
 		"river/tags": {
 			"hide-vacant": true,
@@ -17,5 +18,46 @@
 		},
 
 		"river/window": { "max-length": 30, "rotate": 90, "tooltip": false },
+
+		"group/clock": {
+			"orientation": "inherit",
+			"drawer": { "transition-duration": 0, "click-to-reveal": true },
+			"modules": [
+				"clock",
+				"clock#date",
+				"custom/lock",
+				"custom/poweroff",
+				"custom/quit",
+				"custom/reboot",
+				"custom/wallpaper"
+			]
+		},
+		"clock": { "format": "{:%H\n%M}", "tooltip": false },
+		"clock#date": { "format": "{:%m\n%d\n}", "tooltip": false },
+		"custom/lock": {
+			"format": "L",
+			"tooltip-format": "lock",
+			"on-click": "pkill -USR1 swayidle"
+		},
+		"custom/quit": {
+			"format": "Q",
+			"tooltip-format": "quit",
+			"on-click": "riverctl exit"
+		},
+		"custom/poweroff": {
+			"format": "P",
+			"tooltip-format": "poweroff",
+			"on-click": "poweroff"
+		},
+		"custom/reboot": {
+			"format": "R",
+			"tooltip-format": "reboot",
+			"on-click": "reboot"
+		},
+		"custom/wallpaper": {
+			"format": "W",
+			"tooltip-format": "wallpaper",
+			"on-click": "quick wall"
+		},
 	}
 ]
