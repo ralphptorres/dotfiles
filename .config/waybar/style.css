@@ -20,6 +20,11 @@ window#waybar {
   margin: 1.5rem 0.4rem;
 }
 
+#custom-arrow {
+  font-size: 2.3rem;
+  padding: 0 0.5rem;
+}
+
 #custom-quit,
 #custom-lock,
 #custom-poweroff,
