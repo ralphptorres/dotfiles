@@ -22,6 +22,7 @@
 		"group/util": {
 			"orientation": "inherit",
 			"modules": [
+				"group/bluetooth",
 				"group/backlight",
 				"group/battery",
 			]
