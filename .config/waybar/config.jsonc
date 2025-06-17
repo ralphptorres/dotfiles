@@ -23,12 +23,33 @@
 			"orientation": "inherit",
 			"modules": [
 				"group/backlight",
+				"group/battery",
 			]
 		},
 
 		"group/backlight": { "modules": ["custom/backlight", "backlight"] },
 		"custom/backlight": { "format": "" },
 		"backlight": {
+			"format": "{icon}",
+			"format-icons": ["⡀", "⣀", "⣄", "⣤", "⣦", "⣶", "⣷", "⣿"],
+			"tooltip": false
+		},
+
+		"group/battery": { "modules": ["battery#icon", "battery"] },
+		"battery#icon": {
+			"interval": 1,
+			"states": { "warning": 40, "critical": 20 },
+			"format": "{icon}",
+			"format-icons": {
+				"discharging": "",
+				"charging": "",
+				"full": "󰚥",
+				"warning": "",
+				"critical": ""
+			},
+			"tooltip-format": "{timeTo} ({capacity}%)"
+		},
+		"battery": {
 			"format": "{icon}",
 			"format-icons": ["⡀", "⣀", "⣄", "⣤", "⣦", "⣶", "⣷", "⣿"],
 			"tooltip": false
