@@ -72,6 +72,15 @@
 			"format-connected": "{num_connections}"
 		},
 
+		"group/cpu": { "modules": ["custom/cpu", "cpu"] },
+		"custom/cpu": { "format": "" },
+		"cpu": {
+			"interval": 1,
+			"format": "{icon}",
+			"format-icons": ["⡀", "⣀", "⣄", "⣤", "⣦", "⣶", "⣷", "⣿"],
+			"tooltip": false
+		},
+
 		"group/clock": {
 			"orientation": "inherit",
 			"drawer": { "transition-duration": 0, "click-to-reveal": true },
