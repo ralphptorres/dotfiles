@@ -20,7 +20,8 @@ window#waybar {
   margin: 1.5rem 0.4rem;
 }
 
-#custom-arrow {
+#custom-arrow,
+#custom-backlight {
   font-size: 2.3rem;
   padding: 0 0.5rem;
 }

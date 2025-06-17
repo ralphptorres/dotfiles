@@ -9,7 +9,7 @@
 		"reload_style_on_change": true,
 
 		"modules-left": ["river/tags", "river/window"],
-		"modules-right": ["group/clock", "group/emoji"],
+		"modules-right": ["group/util", "group/clock", "group/emoji"],
 
 		"river/tags": {
 			"hide-vacant": true,
@@ -18,6 +18,21 @@
 		},
 
 		"river/window": { "max-length": 30, "rotate": 90, "tooltip": false },
+
+		"group/util": {
+			"orientation": "inherit",
+			"modules": [
+				"group/backlight",
+			]
+		},
+
+		"group/backlight": { "modules": ["custom/backlight", "backlight"] },
+		"custom/backlight": { "format": "" },
+		"backlight": {
+			"format": "{icon}",
+			"format-icons": ["⡀", "⣀", "⣄", "⣤", "⣦", "⣶", "⣷", "⣿"],
+			"tooltip": false
+		},
 
 		"group/clock": {
 			"orientation": "inherit",
