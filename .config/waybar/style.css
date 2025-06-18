@@ -23,6 +23,7 @@ window#waybar {
 #custom-arrow,
 #custom-backlight,
 #custom-cpu,
+#custom-memory,
 #battery .icon,
 #bluetooth .icon {
   font-size: 2.3rem;

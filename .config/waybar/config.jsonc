@@ -24,6 +24,7 @@
 			"modules": [
 				"group/bluetooth",
 				"group/backlight",
+				"group/memory",
 				"group/battery",
 			]
 		},
@@ -75,6 +76,15 @@
 		"group/cpu": { "modules": ["custom/cpu", "cpu"] },
 		"custom/cpu": { "format": "" },
 		"cpu": {
+			"interval": 1,
+			"format": "{icon}",
+			"format-icons": ["⡀", "⣀", "⣄", "⣤", "⣦", "⣶", "⣷", "⣿"],
+			"tooltip": false
+		},
+
+		"group/memory": { "modules": ["custom/memory", "memory"] },
+		"custom/memory": { "format": "" },
+		"memory": {
 			"interval": 1,
 			"format": "{icon}",
 			"format-icons": ["⡀", "⣀", "⣄", "⣤", "⣦", "⣶", "⣷", "⣿"],
