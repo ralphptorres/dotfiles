@@ -26,6 +26,7 @@
 				"group/network",
 				"group/backlight",
 				"group/memory",
+				"group/cpu",
 				"group/battery",
 			]
 		},
