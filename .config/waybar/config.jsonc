@@ -23,6 +23,7 @@
 			"orientation": "inherit",
 			"modules": [
 				"group/bluetooth",
+				"group/network",
 				"group/backlight",
 				"group/memory",
 				"group/battery",
@@ -89,6 +90,18 @@
 			"format": "{icon}",
 			"format-icons": ["⡀", "⣀", "⣄", "⣤", "⣦", "⣶", "⣷", "⣿"],
 			"tooltip": false
+		},
+
+		"group/network": { "modules": ["custom/network", "network"] },
+		"custom/network": {
+			"format": "",
+			"on-click": "footclient -a float -e nmtui-connect"
+		},
+		"network": {
+			"interval": 1,
+			"format": "{icon}",
+			"format-icons": [" ", "⡀", "⣀", "⣄", "⣤", "⣦", "⣶", "⣷", "⣿"],
+			"tooltip-format-wifi": "{essid} ({signalStrength}%)"
 		},
 
 		"group/clock": {
