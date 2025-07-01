@@ -22,6 +22,7 @@
 		"group/util": {
 			"orientation": "inherit",
 			"modules": [
+				"group/privacy",
 				"group/bluetooth",
 				"group/network",
 				"group/backlight",
@@ -104,6 +105,13 @@
 			"format-icons": [" ", "⡀", "⣀", "⣄", "⣤", "⣦", "⣶", "⣷", "⣿"],
 			"tooltip-format-wifi": "{essid} ({signalStrength}%)"
 		},
+
+		"group/privacy": {
+			"orientation": "inherit",
+			"modules": ["privacy#mic", "privacy#screen"]
+		},
+		"privacy#mic": { "modules": [{ "type": "audio-in" }] },
+		"privacy#screen": { "modules": [{ "type": "screenshare" }] },
 
 		"group/clock": {
 			"orientation": "inherit",
