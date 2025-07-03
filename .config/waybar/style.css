@@ -26,7 +26,8 @@ window#waybar {
 #custom-memory,
 #custom-network,
 #battery .icon,
-#bluetooth .icon {
+#bluetooth .icon,
+#wireplumber .icon {
   font-size: 2.3rem;
   padding: 0 0.5rem;
 }

@@ -28,6 +28,7 @@
 				"group/backlight",
 				"group/memory",
 				"group/cpu",
+				"group/wireplumber",
 				"group/battery",
 			]
 		},
@@ -112,6 +113,19 @@
 		},
 		"privacy#mic": { "modules": [{ "type": "audio-in" }] },
 		"privacy#screen": { "modules": [{ "type": "screenshare" }] },
+
+		"group/wireplumber": { "modules": ["wireplumber#icon", "wireplumber"] },
+		"wireplumber#icon": {
+			"format": "",
+			"format-muted": "婢",
+			"on-click": "adjuster vol_sink =",
+			"on-click-right": "footclient -a float -e pulsemixer"
+		},
+		"wireplumber": {
+			"format": "{icon}",
+			"format-icons": ["⡀", "⣀", "⣄", "⣤", "⣦", "⣶", "⣷", "⣿"],
+			"tooltip": false
+		},
 
 		"group/clock": {
 			"orientation": "inherit",
