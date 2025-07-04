@@ -9,6 +9,7 @@
 		"reload_style_on_change": true,
 
 		"modules-left": ["river/tags", "river/window"],
+		"modules-center": ["group/mpris"],
 		"modules-right": ["group/util", "group/clock", "group/emoji"],
 
 		"river/tags": {
@@ -18,6 +19,35 @@
 		},
 
 		"river/window": { "max-length": 30, "rotate": 90, "tooltip": false },
+
+		"group/mpris": {
+			"orientation": "inherit",
+			"modules": ["custom/lyrics", "mpris", "mpris#icon"]
+		},
+		"mpris#icon": {
+			"format": "{player_icon} ",
+			"format-paused": "{status_icon} ",
+			"player-icons": {
+				"default": "",
+				"mpv": "",
+				"ncspot": "",
+				"spotifyd": ""
+			},
+			"status-icons": { "paused": "" },
+			"rotate": 90,
+			"tooltip": false
+		},
+		"mpris": {
+			"format": "{dynamic}",
+			"max-length": 20,
+			"rotate": 90
+		},
+		"custom/lyrics": {
+			"exec": "/usr/bin/sptlrx pipe",
+			"format": "{}",
+			"rotate": 90,
+			"tooltip": false
+		},
 
 		"group/util": {
 			"orientation": "inherit",

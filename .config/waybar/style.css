@@ -27,6 +27,7 @@ window#waybar {
 #custom-network,
 #battery .icon,
 #bluetooth .icon,
+#mpris .icon,
 #wireplumber .icon {
   font-size: 2.3rem;
   padding: 0 0.5rem;
