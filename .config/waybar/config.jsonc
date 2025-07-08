@@ -204,5 +204,26 @@
 		},
 		"custom/arrow": { "format": "", "tooltip": false },
 		"custom/emoji": { "format": "🦊\n🐧" }
+	},
+
+	{
+		"layer": "top",
+		"output": "DP-1",
+		"position": "right",
+		"width": 59,
+		"spacing": 10,
+		"mode": "dock",
+		"reload_style_on_change": true,
+
+		"modules-left": ["river/tags", "river/window"],
+		"modules-right": ["clock"],
+
+		"river/tags": {
+			"hide-vacant": true,
+			"tag-labels": ["I", "II", "III", "IV", "V", "VI", "VII", "8", "IX", "X"],
+			"tooltip": false
+		},
+		"river/window": { "max-length": 30, "rotate": 90, "tooltip": false },
+		"clock": { "format": "{:%H\n%M}", "tooltip": false }
 	}
 ]
