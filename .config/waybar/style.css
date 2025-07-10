@@ -60,3 +60,20 @@ window#waybar {
 #tags button.urgent {
   font-weight: bold;
 }
+
+/* #backlight, */
+/* #battery, */
+/* #cpu, */
+/* #memory, */
+/* #network, */
+/* #wireplumber { */
+/* border: 0.05rem solid @c-tees; */
+/* border-radius: 0.5rem; */
+/* padding: 0; */
+/* } */
+
+/* #util { */
+/* background-color: alpha(@c-tix2, 0.9); */
+/* border-radius: 0.5rem; */
+/* padding: 0.2rem; */
+/* } */
