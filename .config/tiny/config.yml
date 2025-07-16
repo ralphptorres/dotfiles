@@ -1,3 +1,32 @@
+servers:
+    - addr: irc.libera.chat
+      port: 6697
+      tls: true
+      alias: libera
+
+      realname: Ralph Torres
+      nicks: [ralphptorres]
+      # sasl, pass (for PASS), nickserv_ident (for PRIVMSG nickserv identify ...
+      # after connecting, before joining channels)
+      sasl:
+        username: ralphptorres
+        password:
+          command: passage show home/libera
+
+      join:
+        # - name: '#libera'
+        #   ignore: true
+        # - '#archlinux'
+        # - '#archlinux-aur'
+        # - '#river'
+        # - '#rust'
+        # - '#sway'
+        # - '#aerc'
+        []
+
+      # ignore: false    # for join, part lines
+      # notify: mentions # mentions, messages, off
+
 # for /connect
 defaults:
     tls: true
