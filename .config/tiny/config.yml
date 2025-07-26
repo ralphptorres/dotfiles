@@ -45,6 +45,19 @@ servers:
         # - '#tiny'
         []
 
+    - addr: irc.chat.twitch.tv
+      port: 6697
+      tls: true
+      alias: twitch
+
+      realname: Ralph Torres
+      nicks: [ralphptorres]
+      nickserv_ident:
+        command: passage show home/twitch
+
+      join:
+        []
+
 # for /connect
 defaults:
     tls: true
