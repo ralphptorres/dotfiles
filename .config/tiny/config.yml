@@ -27,6 +27,24 @@ servers:
       # ignore: false    # for join, part lines
       # notify: mentions # mentions, messages, off
 
+    - addr: irc.oftc.net
+      port: 6697
+      tls: true
+      alias: oftc
+
+      realname: Ralph Torres
+      nicks: [ralphptorres]
+      nickserv_ident:
+        command: passage show home/oftc
+
+      join:
+        # - '#alpine-linux'
+        # - '#alpine-devel'
+        # - '#asahi'
+        # - '#asahi-dev'
+        # - '#tiny'
+        []
+
 # for /connect
 defaults:
     tls: true
