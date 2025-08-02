@@ -1,0 +1,17 @@
+[database]
+path = /home/ralph/home/mail/work-ateneo
+
+[user]
+name = Ralph Torres
+primary_email = mail@ralphptorr.es
+other_email = ralph.torres@student.ateneo.edu;rtorres@belle2.ifj.edu.pl;
+
+[new]
+tags = unread;inbox;
+ignore =
+
+[search]
+exclude_tags = deleted;spam;
+
+[maildir]
+synchronize_flags = true
