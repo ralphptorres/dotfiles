@@ -1,0 +1,65 @@
+[colors]
+
+# https://coolors.co/fafef9-e9efe9-dae0d5-0b0e0d-1f201f-292e2f-d2ccb4-cbbb9f-c89d80
+
+tix0 = 0xfafef9
+tix1 = 0xe9efe9
+tix2 = 0xdae0d5
+
+tees = 0x0b0e0d
+seat = 0x1f201f
+ipad = 0x292e2f
+
+tile = 0xd2ccb4
+pant = 0xcbbb9f
+arms = 0xc89d80
+
+# https://coolors.co/f75f59-e3d169-52bb62-6e86c4-6dd6fc-00a4ff-008df4-007fe0
+
+shot0.l = 0xf75f59
+shot1.l = 0xe3d169
+grass.l = 0x52bb62
+shot2.l = 0x6e86c4
+plate.l = 0x6dd6fc
+
+case0.l = 0x00a4ff
+case1.l = 0x008df4
+case2.l = 0x007fe0
+
+# https://coolors.co/ba4843-ab9d4f-3e8d4a-536593-52a1bd-007bc0-006ab7-0060a8
+
+shot0.d = 0xba4843
+shot1.d = 0xab9d4f
+grass.d = 0x3e8d4a
+shot2.d = 0x536593
+plate.d = 0x52a1bd
+case0.d = 0x007bc0
+case1.d = 0x006ab7
+case2.d = 0x0060a8
+
+[primary]
+
+background = "tees"
+foreground = "tix0"
+
+[normal]
+
+black = "seat"
+red = "shot0.l"
+green = "grass.l"
+yellow = "shot2.l"
+blue = "case0.l"
+magenta = "shot3.l"
+cyan = "plate.l"
+white = "tix1"
+
+[bright]
+
+black = "ipad"
+red = "shot0.d"
+green = "grass.d"
+yellow = "shot2.d"
+blue = "case0.d"
+magenta = "shot3.d"
+cyan = "plate.d"
+white = "tix2"
