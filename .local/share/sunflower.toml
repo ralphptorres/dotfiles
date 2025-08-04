@@ -1,0 +1,46 @@
+[colors]
+
+card1 = 0xf5e2de
+card2 = 0xe1d2d0
+card3 = 0xc6b3af
+disk1 = 0x120d06
+disk2 = 0x281207
+disk3 = 0x341c0a
+rays1 = 0xb17100
+rays2 = 0xe09700
+rays3 = 0xf5a800
+soju1 = 0x7a855a
+soju2 = 0x446533
+soju3 = 0x1b2d12
+book = 0x992e25
+leaf = 0x606b29
+bead = 0x1c3360
+beep = 0x412a32
+pray = 0x404c4e
+
+[primary]
+
+background = "card1"
+foreground = "disk1"
+
+[normal]
+
+black = "disk1"
+red = "book"
+green = "leaf"
+yellow = "rays1"
+blue = "bead"
+magenta = "beep"
+cyan = "pray"
+white = "card1"
+
+[bright]
+
+black = "soju1"
+red = "book"
+green = "leaf"
+yellow = "rays1"
+blue = "bead"
+magenta = "beep"
+cyan = "pray"
+white = "soju3"
