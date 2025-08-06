@@ -147,10 +147,11 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 # execute external utils
 
-# swaybg -m fill -i "$(find $HOME/home/pic/physics-twitter -type f | shuf -n1)" &
-# swaybg -m fill -i "$(find $HOME/home/pic/libreshot-com -type f | shuf -n1)" &
-# swaybg -m fill -i "$(find $HOME/home/pic/art-friends -type f | shuf -n1)" &
-swaybg -m fill -i "$(find $HOME/home/pic/imel-mono-test -type f | shuf -n1)" &
+swaybg -m fill -i "$(find $HOME/home/pic/imel-mono -type f | shuf -n1)" &
+# swaybg -m fill -i "$(find $HOME/home/pic/interstellar -type f | shuf -n1)" &
+# swaybg -m fill -i "$(find $HOME/home/pic/kirokaze-gifs -type f | shuf -n1)" &
+# swaybg -m fill -i "$(find $HOME/home/pic/libreshot-city -type f | shuf -n1)" &
+# swaybg -m fill -i "$(find $HOME/home/pic/libreshot-street -type f | shuf -n1)" &
 foot --server &
 kanshi &
 fnott &
