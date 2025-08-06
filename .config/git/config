@@ -13,3 +13,9 @@ fixes = Fixes: %h (\"%s\")
 
 [credential]
 helper = cache
+
+[sendemail]
+smtpserver = smtp.mail.me.com
+smtpuser = ralphptorres@icloud.com
+smtpencryption = ssl
+smtpserverport = 465
