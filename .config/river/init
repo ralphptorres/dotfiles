@@ -80,7 +80,7 @@ riverctl map normal Super+Shift return  toggle-float
 # A S D G semicolon apostrophe 
 
 riverctl map normal Super B             spawn "foot -e lf"
-riverctl map normal Super+Shift B       spawn "zen-browser"
+riverctl map normal Super+Shift B       spawn "firefox"
 riverctl map normal Super N             spawn "obsidian"
 riverctl map normal Super+Shift N       spawn "rnote"
 riverctl map normal Super M             spawn "foot -e aerc"
