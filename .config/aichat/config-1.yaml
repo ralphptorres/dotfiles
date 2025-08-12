@@ -1,6 +1,7 @@
-# model: claude:claude-opus-4
+# model: claude:claude-sonnet-4-5-20250929:thinking
+# model: claude:claude-sonnet-4-5-20250929
 # model: claude:claude-sonnet-4-20250514
-# model: claude:claude-sonnet-4
+# model: claude:claude-3-7-sonnet-20250219:thinking
 model: claude:claude-3-7-sonnet-20250219
 # model: claude:claude-3-5-haiku-20241022
 
