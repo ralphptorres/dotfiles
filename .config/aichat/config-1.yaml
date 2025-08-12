@@ -1,0 +1,42 @@
+# model: claude:claude-opus-4
+# model: claude:claude-sonnet-4-20250514
+# model: claude:claude-sonnet-4
+model: claude:claude-3-7-sonnet-20250219
+# model: claude:claude-3-5-haiku-20241022
+
+# model: gemini:gemini-2.5-pro-exp-03-25
+# model: gemini:gemini-2.5-flash-preview-05-20
+# model: gemini:gemini-2.0-flash
+#
+# model: mistral:mistral-large-latest
+# model: mistral:mistral-small-latest
+# model: mistral:codestral-latest
+
+# model: openai:chatgpt-4o-latest
+# model: openai:o3-mini-high
+# model: openai:gpt-4o-mini
+
+temperature: null
+top_p: null
+keybindings: vi
+light_theme: true
+repl_prelude: session:temp
+save_session: true
+wrap: auto
+
+clients:
+  - type: claude
+    api_base: https://api.anthropic.com/v1
+    api_key: ***
+  - type: gemini
+    api_base: https://generativelanguage.googleapis.com/v1beta
+    api_key: ***
+  - type: openai
+    api_base: https://api.openai.com/v1
+    api_key: ***
+  - type: openai-compatible
+    name: mistral
+    api_base: https://api.mistral.ai/v1
+    api_key: ***
+    # api_base: https://codestral.mistral.ai/v1/fim/completions
+    # api_key: ***
