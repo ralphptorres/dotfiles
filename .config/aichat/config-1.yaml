@@ -5,10 +5,10 @@
 model: claude:claude-3-7-sonnet-20250219
 # model: claude:claude-3-5-haiku-20241022
 
-# model: gemini:gemini-2.5-pro-exp-03-25
-# model: gemini:gemini-2.5-flash-preview-05-20
-# model: gemini:gemini-2.0-flash
-#
+# model: gemini:gemini-2.5-pro
+# model: gemini:gemini-2.5-flash
+# model: gemini:gemini-2.5-flash-lite
+
 # model: mistral:mistral-large-latest
 # model: mistral:mistral-small-latest
 # model: mistral:codestral-latest
