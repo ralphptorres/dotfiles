@@ -15,9 +15,12 @@ model: claude:claude-3-7-sonnet-20250219
 # model: mistral:magistral-small-latest
 # model: mistral:codestral-latest
 
-# model: openai:chatgpt-4o-latest
-# model: openai:o3-mini-high
+# model: openai:gpt-5
+# model: openai:gpt-5-mini
+# model: openai:gpt-5-nano
+# model: openai:gpt-4o
 # model: openai:gpt-4o-mini
+# model: openai:o4-mini
 
 temperature: null
 top_p: null
