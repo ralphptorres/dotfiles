@@ -1,0 +1,3 @@
+instance "sr.ht" {
+	access-token "***"
+}
