@@ -1,0 +1,22 @@
+@define-color window_bg_color rgba(250, 254, 249, 0.90);
+
+* {
+  --toolbox-bgcolor: @window_bg_color;
+  --toolbox-bgcolor-inactive: @window_bg_color;
+  --sidebar-bg-color: transparent;
+  --sidebar-backdrop-color: transparent;
+  --window-bg-color: @window_bg_color;
+}
+
+window {
+  background-color: @window_bg_color;
+}
+
+window:backdrop {
+  background-color: @window_bg_color;
+}
+
+headerbar.default-decoration {
+  margin-bottom: 50px;
+  margin-top: -100px;
+}
