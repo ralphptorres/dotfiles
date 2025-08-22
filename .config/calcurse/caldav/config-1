@@ -1,5 +1,7 @@
 [General]
 Binary = calcurse
+# Hostname = nch.pl
+# Path = /remote.php/dav/calendars/ralphptorres/core/
 Hostname = p54-caldav.icloud.com
 Path = ***
 AuthMethod = basic
@@ -10,5 +12,7 @@ DryRun = No
 Verbose = Yes
 
 [Auth]
+# Username = ralphptorres
+# PasswordCommand = rbw get nextcloud -f boron
 Username = ralphptorres@icloud.com
 PasswordCommand = rbw get apple -f boron
