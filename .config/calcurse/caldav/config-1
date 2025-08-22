@@ -1,0 +1,14 @@
+[General]
+Binary = calcurse
+Hostname = nch.pl
+Path = /remote.php/dav/calendars/ralphptorres/core/
+AuthMethod = basic
+InsecureSSL = No
+HTTPS = Yes
+SyncFilter = cal,todo
+DryRun = No
+Verbose = Yes
+
+[Auth]
+Username = ralphptorres
+PasswordCommand = rbw get nextcloud -f boron
