@@ -1,0 +1,51 @@
+[window]
+
+padding.x = 10
+padding.y = 10
+opacity = 0.9
+# option_as_alt = "OnlyLeft"
+
+[font]
+
+# normal.family = "cozette"
+# normal.style = "hidpicrossedseven"
+normal.family = "monospace"
+# normal.family = "drafting mono"
+normal.style = "light"
+size = 16
+
+[colors]
+
+primary.foreground = "#0b0e0d" # k tees
+primary.background = "#fafef9" # w tix0
+
+normal.red = "#ba4843"     # r shot0d
+normal.green = "#3e8d4a"   # g grassd
+normal.yellow = "#ab9d4f"  # y shot1d
+normal.blue = "#007bc0"    # b case0d
+normal.magenta = "#536593" # m shot2d
+normal.cyan = "#52a1bd"    # c plated
+# normal.black = "#c89d80"   # h arms
+# normal.black = "#e9efe9"   # w tix1
+normal.black = "#1f201f" # k seat
+normal.white = "#1f201f" # k seat
+
+bright.red = "#ba4843"     # r shot0d
+bright.green = "#3e8d4a"   # g grassd
+bright.yellow = "#ab9d4f"  # y shot1d
+bright.blue = "#007bc0"    # b case0d
+bright.magenta = "#536593" # m shot2d
+bright.cyan = "#52a1bd"    # c plated
+# bright.black = "#d2ccb4"   # h tile
+# bright.black = "#cbbb9f"   # h pant
+bright.black = "#dae0d5" # w tix2
+bright.white = "#292e2f" # k ipad
+
+[selection]
+
+save_to_clipboard = true
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "CreateNewWindow"
