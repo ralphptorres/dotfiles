@@ -9,8 +9,31 @@
 	font-size: 1.5rem;
 }
 
+.metric progressbar trough {
+	all: unset;
+	min-height: 2rem;
+	min-width: 1rem;
+	/* border: 0.01rem solid #000; */
+	border-radius: 1rem;
+	margin: 0.2rem 0.1rem;
+}
+
+.metric progressbar trough progress {
+	min-height: 2rem;
+	border: 0.03rem solid #000;
+	border-radius: 1rem;
+}
+
+.text-bigger {
+	font-size: 2.2rem;
+}
+
 .text-big {
 	font-size: 2rem;
+}
+
+.text-sml {
+	font-size: 1.2rem;
 }
 
 .tag-active,

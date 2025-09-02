@@ -19,3 +19,21 @@
     )
   )
 )
+
+(defwidget metric-b [value ?value1 ?label ?label1 ?resize ?onclick ?onrightclick]
+  (eventbox
+    :onclick {onclick}
+    :onrightclick {onrightclick}
+    (overlay :class "metric" :orientation "h"
+      (progress :orientation "h" :value {value1 ?: value})
+      (box
+        ; :halign {label1 != "" ? "fill" : "center"}
+        :halign "center"
+        :space-evenly {label1 != "" ? true : false}
+        ; :spacing 2
+        (label :class `text-${resize == true ? "big" : "bigger"}` :text {label})
+        (label :class "text-sml" :text {label1})
+      )
+    )
+  )
+)
