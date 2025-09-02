@@ -1,0 +1,19 @@
+(defwindow bar
+  :geometry (geometry
+  	:x "0"
+    :y "0"
+    :height "100%"
+    :width "57px"
+    :anchor "left center")
+  :exclusive true
+  :monitor "Color LCD"
+
+  (box :orientation "v"
+    (box :orientation "v" :space-evenly false :valign "start"
+      ""
+      (for t in tags (tag :id t :symbol "${tagssym[t - 1]}"))
+      ""
+      (label :angle 90 :limit-width 20 :text {river.title})
+    )
+  )
+)

@@ -1,0 +1,23 @@
+* {
+	all: unset;
+}
+
+.bar {
+	all: unset;
+	color: #000;
+	font-family: cozettevector;
+	font-size: 1.5rem;
+}
+
+.text-big {
+	font-size: 2rem;
+}
+
+.tag-active,
+.tag-urgent {
+	font-weight: bold;
+}
+
+.tag-empty {
+	color: #ccc;
+}

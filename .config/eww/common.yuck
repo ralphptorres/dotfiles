@@ -1,0 +1,21 @@
+(defvar tags "[1, 2, 3, 4, 5, 6, 7, 8, 9]")
+(defvar tagssym "[1, 2, 3, 4, 5, 6, 7, 8, 9]")
+
+(deflisten river
+  :initial ""
+  `ristate -w -t -u -vt`
+)
+
+(defwidget tag [id symbol]
+  (eventbox
+    :class "text-big"
+    :onclick `riverctl set-focused-tags $(( 1 << (${id} - 1) ))`
+    (box
+      :class `tag ${id == jq(river, ".tags | to_entries[0].value[0] | tonumber")
+        ? "tag-active"
+      : matches(id, jq(river, ".viewstag | to_entries[0].value | unique"))
+        ? "tag-occupied"
+      : "tag-empty"}` {symbol}
+    )
+  )
+)
