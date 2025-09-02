@@ -15,5 +15,11 @@
       ""
       (label :angle 90 :limit-width 20 :text {river.title})
     )
+
+    (box :orientation "v" :space-evenly false :valign "end"
+      (label :class "text-big" :text "🦊")
+      (label :class "text-big" :text "🐧")
+      ""
+    )
   )
 )
