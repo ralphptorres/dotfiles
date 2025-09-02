@@ -17,6 +17,18 @@
     )
 
     (box :orientation "v" :space-evenly false :valign "end"
+      (metric-b
+        :label `${EWW_BATTERY.BAT0.status == "Full" ? "󰚥"
+          ; : EWW_BATTERY.BAT0.status == "Charging" ? ""
+          : EWW_BATTERY.BAT0.status == "Charging" ? ""
+          : EWW_BATTERY.BAT0.capacity < 40 ? ""
+          : EWW_BATTERY.BAT0.capacity < 20 ? ""
+          : "" }`
+        :label1 {EWW_BATTERY.BAT0.capacity}
+        :resize true
+        :value {round(EWW_BATTERY["BAT0"].capacity * (100/60), 0)}
+      )
+      ""
       (label :text {formattime(EWW_TIME, "%a")})
       (label :class "text-big" :text {formattime(EWW_TIME, "%m%n%d%n%H%n%M")})
       ""
