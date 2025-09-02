@@ -17,6 +17,9 @@
     )
 
     (box :orientation "v" :space-evenly false :valign "end"
+      (label :text {formattime(EWW_TIME, "%a")})
+      (label :class "text-big" :text {formattime(EWW_TIME, "%m%n%d%n%H%n%M")})
+      ""
       (label :class "text-big" :text "🦊")
       (label :class "text-big" :text "🐧")
       ""
