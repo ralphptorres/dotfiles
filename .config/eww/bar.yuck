@@ -17,6 +17,7 @@
     )
 
     (box :orientation "v" :space-evenly false :valign "end"
+      (metric-b :label "" :value {EWW_RAM.used_mem_perc})
       (metric-b :label "" :resize true :value {EWW_DISK["/"].used_perc})
       (metric-b
         :label `${EWW_BATTERY.BAT0.status == "Full" ? "󰚥"
