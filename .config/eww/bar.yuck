@@ -17,6 +17,15 @@
     )
 
     (box :orientation "v" :space-evenly false :valign "end"
+      (metric-b
+        :label `${EWW_TEMPS["CORETEMP_CORE_0"] < 60 ? ""
+          : EWW_TEMPS["CORETEMP_CORE_0"] < 50 ? ""
+          : EWW_TEMPS["CORETEMP_CORE_0"] < 40 ? ""
+          : EWW_TEMPS["CORETEMP_CORE_0"] < 30 ? ""
+          :"" }`
+        :resize true
+        :value {EWW_TEMPS["CORETEMP_CORE_0"]}
+      )
       (metric-b :label "" :value {EWW_CPU.avg})
       (metric-b :label "" :value {EWW_RAM.used_mem_perc})
       (metric-b :label "" :resize true :value {EWW_DISK["/"].used_perc})
