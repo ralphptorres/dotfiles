@@ -17,6 +17,7 @@
     )
 
     (box :orientation "v" :space-evenly false :valign "end"
+      (metric-b :label "" :value {utilk})
       (metric-b
         :label `${EWW_TEMPS["CORETEMP_CORE_0"] < 60 ? ""
           : EWW_TEMPS["CORETEMP_CORE_0"] < 50 ? ""
