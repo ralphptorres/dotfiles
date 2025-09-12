@@ -18,6 +18,15 @@
 
     (box :orientation "v" :space-evenly false :valign "end"
       (metric-b
+        :label `${utilvos != "" ? "ﱝ"
+          : utilvo < 20 ? "奄"
+          : utilvo < 40 ? "奔"
+          : ""}`
+        :value {utilvo}
+        :onclick `alacritty msg create-window --class float -e pulsemixer`
+        :onrightclick `adjuster vol_sink =`
+      )
+      (metric-b
         :label `${utilvis != "" ? "" : ""}`
         :onclick `alacritty msg create-window --class float -e pulsemixer`
         :onrightclick `adjuster vol_source =`
