@@ -18,6 +18,13 @@
 
     (box :orientation "v" :space-evenly false :valign "end"
       (metric-b
+        :label `${utilvis != "" ? "" : ""}`
+        :onclick `alacritty msg create-window --class float -e pulsemixer`
+        :onrightclick `adjuster vol_source =`
+        :resize true
+        :value {utilvi}
+      )
+      (metric-b
         :label `${utilb > 50 ? "" : ""}`
         :value {utilb})
       (metric-b :label "" :value {utilk})
