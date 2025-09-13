@@ -17,6 +17,7 @@
   `printf '["%s","%s","%s"]' \
     "$(bluetoothctl show | grep PowerState | cut -d: -f2 | tr -d ' ')" \
     "$(bluetoothctl devices Connected | grep Device | wc -l)" \
+    "$(nmcli -t connection show --active | grep wlan0 | cut -d: -f1)" \
   `
 )
 
