@@ -44,6 +44,14 @@
   )
 )
 
+(defwidget metric [?label value ?value2]
+  (overlay :class "metric" :orientation "h"
+    ; (circular-progress :clockwise false :thickness 5 :value value)
+    (progress :orientation "h" :value {value2 ?: value})
+    (label :class "text-sml" :text {label})
+  )
+)
+
 (defwidget metric-b [value ?value1 ?label ?label1 ?resize ?onclick ?onrightclick]
   (eventbox
     :onclick {onclick}
