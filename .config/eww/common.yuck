@@ -12,6 +12,14 @@
   `ristate -w -t -u -vt`
 )
 
+(defpoll stat
+  :interval "5s"
+  `printf '["%s","%s","%s"]' \
+    "$(bluetoothctl show | grep PowerState | cut -d: -f2 | tr -d ' ')" \
+    "$(bluetoothctl devices Connected | grep Device | wc -l)" \
+  `
+)
+
 (defwidget tag [id symbol]
   (eventbox
     :class "text-big"
