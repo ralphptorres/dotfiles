@@ -18,6 +18,15 @@
 
     (box :orientation "v" :space-evenly false :valign "end"
       (metric-b
+        :label `${stat[0] == "off" ? ""
+          : stat[1] > 0 ? ""
+          : ""}`
+        :label1 {stat[1] > 0 ? stat[1] : ""}
+        :onclick `alacritty msg create-window --class float -e bluetui`
+        ; :resize true
+        :value 0
+      )
+      (metric-b
         :label `${utilvos != "" ? "ﱝ"
           : utilvo < 20 ? "奄"
           : utilvo < 40 ? "奔"
