@@ -19,6 +19,11 @@
     "$(bluetoothctl devices Connected | grep Device | wc -l)" \
     "$(nmcli -t connection show --active | grep wlan0 | cut -d: -f1)" \
   `
+  ; $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2) \
+  ; $(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | cut -d' ' -f2) \
+  ; $(light) \
+  ; $(light -s sysfs/leds/apple::kbd_backlight) \
+  ; $(wpctl status | grep \\* | grep -oP '\\[vol: \\K[0-9.]+') \
 )
 
 (defwidget tag [id symbol]
