@@ -21,6 +21,12 @@
   `cal -w | tail -n+2`
 )
 
+(defpoll news
+  :interval "30m"
+  `curl -sL https://rappler.com/feed |
+    xmllint --xpath '//item/title/text()' - | shuf | head -n5`
+)
+
 (defpoll weather
   :interval "15m"
   `curl wttr.in/quezon+city?format=1 | tr -d ' +'`

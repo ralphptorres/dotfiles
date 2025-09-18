@@ -57,6 +57,7 @@
     (box :orientation "h"
       (box :orientation "v"
         (label :class "tile" :text {cal})
+        (label :class "tile" :text "📰 rappler\\n${news}")
       )
     )
   )
