@@ -39,6 +39,19 @@
 
     (box :orientation "h"
       (label :class "tile" :text {weather_full})
+      (box :class "tile" :orientation "v"
+        :style {music.artUrl != "null"
+          ? "box-shadow: inset 0 0 10rem white;
+            background-image: url(\"${music.artUrl}\");
+            background-size: cover;
+            background-position: center;"
+          : ""}
+        ""
+        (label :class "text-bigger" :text {music.title ?: ""})
+        (label :text {music.albumArtist ?: music.artist ?: ""})
+        (metric :value {music-st[1] * (100000000/music.length)})
+        (label :class "text-bigger" :text {music-st[0] == "Playing" ? "⏸" : "▶"})
+      )
     )
   )
 )

@@ -26,6 +26,19 @@
   `curl wttr.in/quezon+city?0QT | tr '\\' '|'`
 )
 
+(defpoll music
+  :interval "5s"
+  `jquery music`
+)
+
+(defpoll music-st
+  :interval "5s"
+  `printf '["%s","%s"]' \
+    $(playerctl status) \
+    $(playerctl position | cut -d. -f1)
+  `
+)
+
 (defpoll stat
   :interval "5s"
   `printf '["%s","%s","%s"]' \
