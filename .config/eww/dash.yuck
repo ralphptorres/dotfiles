@@ -26,6 +26,15 @@
 
     (box :orientation "h"
       (label :class "tile" :text " ${stat[2]}")
+      (box 
+        (label :class "tile" :text "🌌")
+        (label :class "tile" :text "🤖")
+      )
+      (box 
+        (label :class "tile" :text "🦊")
+        (label :class "tile" :text "🐈")
+        (label :class "tile" :text "🐟")
+      )
     )
   )
 )
