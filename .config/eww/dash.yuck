@@ -53,5 +53,11 @@
         (label :class "text-bigger" :text {music-st[0] == "Playing" ? "⏸" : "▶"})
       )
     )
+
+    (box :orientation "h"
+      (box :orientation "v"
+        (label :class "tile" :text {cal})
+      )
+    )
   )
 )
