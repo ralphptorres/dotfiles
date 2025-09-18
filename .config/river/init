@@ -126,7 +126,7 @@ riverctl border-width           1
 
 riverctl focus-follows-cursor   normal
 riverctl hide-cursor timeout    0
-riverctl set-cursor-warp        disabled
+riverctl set-cursor-warp        on-focus-change
 riverctl xcursor-theme          BreezeX-Light 32
 
 riverctl set-repeat 50 300
