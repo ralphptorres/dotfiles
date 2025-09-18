@@ -59,6 +59,9 @@
         (label :class "tile" :text {cal})
         (label :class "tile" :text "📰 rappler\\n${news}")
       )
+      (box :orientation "v"
+        (label :class "tile" :text "🗓 avida\\n${cal_avida}" :xalign 0)
+      )
     )
   )
 )

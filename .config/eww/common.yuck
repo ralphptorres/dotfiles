@@ -21,6 +21,11 @@
   `cal -w | tail -n+2`
 )
 
+(defpoll cal_avida
+  :interval "15m"
+  `gcal avida | head -n3`
+)
+
 (defpoll news
   :interval "30m"
   `curl -sL https://rappler.com/feed |
