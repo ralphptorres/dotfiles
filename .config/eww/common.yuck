@@ -21,6 +21,11 @@
   `curl wttr.in/quezon+city?format=1 | tr -d ' +'`
 )
 
+(defpoll weather_full
+  :interval "15m"
+  `curl wttr.in/quezon+city?0QT | tr '\\' '|'`
+)
+
 (defpoll stat
   :interval "5s"
   `printf '["%s","%s","%s"]' \

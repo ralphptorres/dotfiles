@@ -36,5 +36,9 @@
         (label :class "tile" :text "🐟")
       )
     )
+
+    (box :orientation "h"
+      (label :class "tile" :text {weather_full})
+    )
   )
 )
