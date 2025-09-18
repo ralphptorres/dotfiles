@@ -2,11 +2,20 @@
 	all: unset;
 }
 
-.bar {
+.bar,
+.dash {
 	all: unset;
 	color: #000;
 	font-family: cozettevector;
 	font-size: 1.5rem;
+}
+
+.dash {
+	font-size: 1.5rem;
+	border: 0.03rem solid #000;
+	border-radius: 0 5rem 5rem 0;
+	padding: 0 1rem 1rem 1rem;
+	margin: 2rem 2rem 2rem 0;
 }
 
 .metric progressbar trough {
@@ -22,6 +31,16 @@
 	min-height: 2rem;
 	border: 0.03rem solid #000;
 	border-radius: 1rem;
+}
+
+.text-biggest {
+	all: unset;
+	color: rgba(0, 0, 0, 0.4);
+	font-family: Bodoni Moda;
+	/* font-family: Jost\*; */
+	font-size: 10rem;
+	font-weight: 900;
+	margin: 0 2rem -3rem 1rem;
 }
 
 .text-bigger {

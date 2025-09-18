@@ -1,0 +1,19 @@
+(defwindow dash
+  :geometry (geometry
+  	:x "0"
+    :y "0"
+    :height "100%"
+    :width "1050"
+    :anchor "left center")
+  :monitor '["Artist 12 pro", "LCD", "Color LCD"]'
+  :stacking "fg"
+
+  (box :orientation "v" :space-evenly false 
+    (box :orientation "h" :space-evenly false
+      (label
+        :class "text-biggest"
+        :text {formattime(EWW_TIME, "%H:%M", "Singapore")}
+      )
+    )
+  )
+)
