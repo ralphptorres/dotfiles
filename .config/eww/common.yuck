@@ -16,6 +16,11 @@
   `ristate -w -t -u -vt`
 )
 
+(defpoll weather
+  :interval "15m"
+  `curl wttr.in/quezon+city?format=1 | tr -d ' +'`
+)
+
 (defpoll stat
   :interval "5s"
   `printf '["%s","%s","%s"]' \
