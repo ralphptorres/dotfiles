@@ -139,8 +139,8 @@ rivertile -view-padding 0 -outer-padding 0 -main-location left -main-count 1 -ma
 
 # NOTE: color-scheme does not work with libadwaita for gtk4 apps, has to use
 # libadwaita-without-adwaita then set gtk-theme instead
-# gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
+gsettings set org.gnome.desktop.interface color-scheme prefer-light
+gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
 gsettings set org.gnome.desktop.interface cursor-theme BreezeX-Dark
 gsettings set org.gnome.desktop.interface cursor-size 45
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river # for xdpw
