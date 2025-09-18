@@ -23,5 +23,9 @@
         (label :class "text-big" :text {weather})
       )
     )
+
+    (box :orientation "h"
+      (label :class "tile" :text " ${stat[2]}")
+    )
   )
 )

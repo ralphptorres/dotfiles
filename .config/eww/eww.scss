@@ -33,6 +33,14 @@
 	border-radius: 1rem;
 }
 
+.tile {
+	all: unset;
+	border: 0.05rem solid #000;
+	border-radius: 2.5rem;
+	padding: 1.5rem;
+	margin: 1rem;
+}
+
 .text-biggest {
 	all: unset;
 	color: rgba(0, 0, 0, 0.4);
