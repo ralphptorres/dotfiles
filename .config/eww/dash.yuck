@@ -61,6 +61,7 @@
       )
       (box :orientation "v"
         (label :class "tile" :text "🗓 avida\\n${cal_avida}" :xalign 0)
+        (label :class "tile" :text "🗓 ralph\\n${cal_ralph}" :xalign 0)
       )
     )
   )

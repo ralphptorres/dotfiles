@@ -26,6 +26,11 @@
   `gcal avida | head -n3`
 )
 
+(defpoll cal_ralph
+  :interval "15m"
+  `gcal "ralph t" | head -n3`
+)
+
 (defpoll news
   :interval "30m"
   `curl -sL https://rappler.com/feed |
