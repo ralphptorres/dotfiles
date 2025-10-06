@@ -1,0 +1,22 @@
+Create Both
+Expunge Both
+
+IMAPAccount gmail
+Host imap.gmail.com
+User ralph.torres@student.ateneo.edu
+PassCmd "rbw get tok/google"
+TLSType IMAPS
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+SubFolders Verbatim
+Path ~/home/mail/work-ateneo/
+Inbox ~/home/mail/work-ateneo/INBOX
+
+Channel gmail
+Far :gmail-remote:
+Near :gmail-local:
+Patterns *
+SyncState *
