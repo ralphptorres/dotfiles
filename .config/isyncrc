@@ -3,8 +3,8 @@ Expunge Both
 
 IMAPAccount gmail
 Host imap.gmail.com
-User ralph.torres@student.ateneo.edu
-PassCmd "rbw get tok/google"
+User rptorres@ateneo.edu
+PassCmd "rbw get google-ateneo -f boron"
 TLSType IMAPS
 
 IMAPStore gmail-remote
