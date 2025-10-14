@@ -1,5 +1,10 @@
 [language-server]
 
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
+config.basedpyright.analysis.typeCheckingMode = "basic"
+
 [language-server.ruff]
 command = "ruff"
 args = ["server"]
