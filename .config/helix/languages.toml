@@ -65,6 +65,7 @@ comment-tokens = ["-", "*", "- [ ]", ">"]
 
 [[language]]
 name = "python"
+auto-format = true
 language-servers = ["basedpyright", "ruff", "ty"]
 
 [[language]]
