@@ -8,6 +8,10 @@ args = ["server"]
 command = "pylyzer"
 args = ["--server"]
 
+[language-server.ty]
+command = "ty"
+args = ["server"]
+
 [language-server.rust-analyzer.config]
 cargo.features = "all"
 check.command = "clippy"
@@ -60,7 +64,7 @@ comment-tokens = ["-", "*", "- [ ]", ">"]
 
 [[language]]
 name = "python"
-language-servers = ["ruff", "pylyzer"]
+language-servers = ["ruff", "pylyzer", "ty"]
 
 [[language]]
 name = "toml"
