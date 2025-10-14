@@ -53,6 +53,8 @@ language-servers = ["texlab", "typos-lsp"]
 
 [[language]]
 name = "markdown"
+auto-format = true
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
 language-servers = ["markdown-oxide", "typos-lsp"]
 comment-tokens = ["-", "*", "- [ ]", ">"]
 
