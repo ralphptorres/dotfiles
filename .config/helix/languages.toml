@@ -67,3 +67,8 @@ name = "typst"
 auto-format = true
 formatter.command = "typstyle"
 language-servers = ["tinymist"]
+
+[[language]]
+name = "yaml"
+auto-format = true
+formatter = { command = "dprint", args = ["fmt", "--stdin", "yaml"] }
