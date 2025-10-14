@@ -4,10 +4,6 @@
 command = "ruff"
 args = ["server"]
 
-[language-server.pylyzer]
-command = "pylyzer"
-args = ["--server"]
-
 [language-server.ty]
 command = "ty"
 args = ["server"]
@@ -64,7 +60,7 @@ comment-tokens = ["-", "*", "- [ ]", ">"]
 
 [[language]]
 name = "python"
-language-servers = ["ruff", "pylyzer", "ty"]
+language-servers = ["basedpyright", "ruff", "ty"]
 
 [[language]]
 name = "toml"
