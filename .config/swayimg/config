@@ -1,5 +1,7 @@
 [viewer]
-window = #0b0e0df3
+# NOTE: viewer.window config transparency is broken for light background
+# filed an issue at https://github.com/artemsen/swayimg/issues/351 
+window = #fafef9e6
 scale = fill
 
 [list]
