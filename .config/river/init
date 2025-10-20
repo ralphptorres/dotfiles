@@ -120,7 +120,7 @@ riverctl rule-add -app-id "*" ssd
 riverctl attach-mode            top
 riverctl background-color       0x0b0e0d # k tees
 riverctl border-color-unfocused 0xfafef9 # w tix0
-riverctl border-color-focused   0x00a4ff # b case0
+riverctl border-color-focused   0x007bc0 # b case0.d
 riverctl border-color-urgent    0xf75f59 # r shot0
 riverctl border-width           1
 
