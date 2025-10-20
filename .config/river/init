@@ -164,7 +164,7 @@ kanshi &
 fnott &
 swayidle &
 yambar &
-wayneko --survive-close &
+wayneko --layer top --survive-close &
 mpd && mpd-mpris &
 
 for drive in gdrive ncloud
