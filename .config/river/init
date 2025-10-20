@@ -52,7 +52,9 @@ riverctl map normal Super T             spawn "screenshotter"
 riverctl map normal Super+Shift T       spawn "screenshotter menu"
 riverctl map normal Super Y             spawn "fnottctl dismiss"
 riverctl map normal Super+Shift Y       spawn "fnottctl dismiss all"
-# E R U I O P bracketleft bracketright backslash 
+riverctl map normal Super U             spawn "eww close bar || eww open bar"
+riverctl map normal Super+Shift U       spawn "eww close dash || eww open dash"
+# E R I O P bracketleft bracketright backslash 
 
 riverctl map normal Super F             toggle-fullscreen
 riverctl map normal Super H             send-layout-cmd rivertile "main-ratio -0.05"
