@@ -130,9 +130,16 @@ riverctl set-cursor-warp        on-focus-change
 riverctl xcursor-theme          BreezeX-Dark 45
 
 riverctl set-repeat 50 300
-riverctl keyboard-layout -options caps:swapescape,ctrl:swap_ralt_rctl,shift:both_capslock us
 riverctl input "pointer-1452-634-bcm5974" natural-scroll enabled
 riverctl input "pointer-1452-634-bcm5974" tap enabled
+if riverctl list-inputs | grep -qe keyboard-6700-*
+then
+	riverctl keyboard-layout -options \
+		caps:swapescape,shift:both_capslock,altwin:swap_alt_win us
+else
+	riverctl keyboard-layout -options \
+		caps:swapescape,shift:both_capslock,ctrl:swap_ralt_rctl us
+fi
 
 riverctl default-layout rivertile
 rivertile -view-padding 0 -outer-padding 0 -main-location left -main-count 1 -main-ratio 0.5 &
