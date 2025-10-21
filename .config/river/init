@@ -77,6 +77,8 @@ riverctl map normal Super+Control H     resize horizontal -100
 riverctl map normal Super+Control L     resize horizontal 100
 riverctl map normal Super+Control J     resize vertical 100
 riverctl map normal Super+Control K     resize vertical -100
+riverctl map normal Super+Control+Shift J send-to-output next
+riverctl map normal Super+Control+Shift K send-to-output previous
 riverctl map normal Super return        zoom
 riverctl map normal Super+Shift return  toggle-float
 # A S D G semicolon apostrophe 
