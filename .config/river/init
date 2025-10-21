@@ -75,8 +75,8 @@ riverctl map normal Super+Alt+Shift J   snap down
 riverctl map normal Super+Alt+Shift K   snap up
 riverctl map normal Super+Control H     resize horizontal -100
 riverctl map normal Super+Control L     resize horizontal 100
-riverctl map normal Super+Control J     resize vertical 100
-riverctl map normal Super+Control K     resize vertical -100
+riverctl map normal Super+Control J     focus-output next
+riverctl map normal Super+Control K     focus-output previous
 riverctl map normal Super+Control+Shift J send-to-output -current-tags next
 riverctl map normal Super+Control+Shift K send-to-output -current-tags previous
 riverctl map normal Super return        zoom
