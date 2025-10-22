@@ -134,8 +134,8 @@ riverctl set-cursor-warp        on-focus-change
 riverctl xcursor-theme          BreezeX-Dark 45
 
 riverctl set-repeat 50 300
-riverctl input "pointer-1452-634-bcm5974" natural-scroll enabled
-riverctl input "pointer-1452-634-bcm5974" tap enabled
+riverctl input pointer-1452-* natural-scroll enabled
+riverctl input pointer-1452-* tap enabled
 if riverctl list-inputs | grep -qe keyboard-6700-*
 then
 	riverctl keyboard-layout -options \
