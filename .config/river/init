@@ -165,7 +165,7 @@ swaybg -m fill -i "$(find $HOME/home/pic/libreshot-city -type f | shuf -n1)" &
 # swaybg -m fill -i "$(find $HOME/home/pic/libreshot-street -type f | shuf -n1)" &
 foot --server &
 kanshi &
-fnott &
+mako &
 swayidle &
 yambar &
 wayneko --layer top --survive-close &
