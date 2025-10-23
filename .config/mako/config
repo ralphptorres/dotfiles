@@ -4,7 +4,7 @@ on-button-middle=dismiss
 on-button-right=exec makoctl menu -n "$id" fuzzel -d -p "notification > " 
 on-notify=exec pw-cat -p /usr/share/sounds/freedesktop/stereo/message.oga
 
-font=monospace regular 11
+font=cozette light 16
 background-color=#f1dddcff
 text-color=#131008ff
 width=400
