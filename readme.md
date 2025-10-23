@@ -60,6 +60,8 @@ My current setup looks like this:
 [fuzzel]: https://codeberg.org/dnkl/fuzzel
 [mako]: https://github.com/emersion/mako
 [eww]: https://github.com/elkowar/eww
+[yambar]: https://codeberg.org/dnkl/yambar
+[waybar]: https://github.com/Alexays/Waybar
 [helix]: https://github.com/helix-editor/helix
 [kakoune]: https://github.com/mawww/kakoune
 [aerc]: https://git.sr.ht/~rjarry/aerc
