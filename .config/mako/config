@@ -55,18 +55,21 @@ on-notify=exec pw-cat -p /usr/share/sounds/freedesktop/stereo/complete.oga
 [app-name=Spotify]
 on-notify=none
 text-color=#6c7932ff
+padding=5
 border-color=#6c7932ff
 max-icon-size=100
 
 [app-name=ncspot]
 on-notify=none
 text-color=#6c7932ff
+padding=5
 border-color=#6c7932ff
 max-icon-size=200
 
 [app-name=mpd]
 on-notify=none
 text-color=#6c7932ff
+padding=5
 border-color=#6c7932ff
 max-icon-size=100
 
