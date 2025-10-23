@@ -62,7 +62,7 @@ max-icon-size=100
 on-notify=none
 text-color=#6c7932ff
 border-color=#6c7932ff
-max-icon-size=100
+max-icon-size=200
 
 [app-name=mpd]
 on-notify=none
