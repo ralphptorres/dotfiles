@@ -5,8 +5,8 @@ on-button-right=exec makoctl menu -n "$id" fuzzel -d -p "notification > "
 on-notify=exec pw-cat -p /usr/share/sounds/freedesktop/stereo/message.oga
 
 font=cozette light 16
-background-color=#f1dddcff
-text-color=#131008ff
+background-color=#fafef9e6
+text-color=#0b0e0dff
 width=400
 height=100
 outer-margin=10
