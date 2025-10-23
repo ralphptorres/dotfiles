@@ -44,8 +44,8 @@ group-by=app-name
 
 [app-name=pomo]
 on-notify=none
-text-color=#a86500ff
-border-color=#a86500ff
+text-color=#ba4843ff
+border-color=#ba4843ff
 default-timeout=61000
 group-by=app-name
 
