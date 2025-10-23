@@ -95,9 +95,7 @@ I used to rock a very similar keyboard-driven macos setup but grew tired of
 During my stay there, I used [sketchybar] for bar, [skhd] for key bindings, and
 [alacritty] for terminal.
 
-My macos setup looked like this:
-
-TODO: add screenshots
+Unfortunately, I couldn't find screenshots of my old macos setup.
 
 My arch setup used to look like this (it's not the prettiest, I know):
 
