@@ -52,7 +52,7 @@ The tools I use for productivity are
 
 My current setup looks like this:
 
-TODO: add screenshots
+![](.local/share/dotfiles/archv3.png)
 
 [archlinux]: https://archlinux.org
 [river]: https://github.com/koekeishiya/yabai
@@ -101,7 +101,7 @@ TODO: add screenshots
 
 My arch setup used to look like this (it's not the prettiest, I know):
 
-TODO: add screenshots
+![](.local/share/dotfiles/archv1,2.png)
 
 [yabai]: https://github.com/koekeishiya/yabai
 [sketchybar]: https://github.com/FelixKratz/SketchyBar
