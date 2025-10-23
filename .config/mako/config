@@ -73,6 +73,7 @@ max-icon-size=100
 on-notify=none
 width=400
 height=400
+padding=0
 history=0
 max-icon-size=390
 
