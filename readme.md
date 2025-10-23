@@ -2,7 +2,7 @@
 
 This is repo of my config files for my archlinux-based macbook. For those who
 aren't aware, these files are called dotfiles because either its filename or its
-parent dirname starts with a dot, eg. `.env, .profile, .config, .local/share`.
+parent dirname starts with a dot, eg. `.env`, `.profile`, `.config`, `.local/share`.
 
 ## next
 
