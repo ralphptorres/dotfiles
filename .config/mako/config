@@ -40,6 +40,7 @@ group-by=summary
 
 [app-name=adjust]
 on-notify=exec pw-cat -p /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+group-by=app-name
 
 [app-name=pomo]
 on-notify=none
