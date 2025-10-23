@@ -4,6 +4,8 @@ This is repo of my config files for my archlinux-based macbook. For those who
 aren't aware, these files are called dotfiles because either its filename or its
 parent dirname starts with a dot, eg. `.env`, `.profile`, `.config`, `.local/share`.
 
+![](.local/share/20250709-060237.png)
+
 ## next
 
 Ngl, I miss the three- and four-finger trackpad gestures in macos. My current
