@@ -163,11 +163,11 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 # swaybg -m fill -i "$(find $HOME/home/pic/kirokaze-gifs -type f | shuf -n1)" &
 swaybg -m fill -i "$(find $HOME/home/pic/libreshot-city -type f | shuf -n1)" &
 # swaybg -m fill -i "$(find $HOME/home/pic/libreshot-street -type f | shuf -n1)" &
+eww open bar &
 foot --server &
 kanshi &
 mako &
 swayidle &
-yambar &
 wayneko --layer top --survive-close &
 mpd && mpd-mpris &
 
