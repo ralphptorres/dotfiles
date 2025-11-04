@@ -172,7 +172,7 @@ wayneko --layer top --survive-close &
 mpd && mpd-mpris &
 
 if wlr-randr | grep -qe "UGD Artist.*"
-then wlr-randr --output DP-1 --transform 270
+then wlr-randr --output DP-1 --left-of eDP-1 --transform 270
 fi
 
 for drive in gdrive ncloud
