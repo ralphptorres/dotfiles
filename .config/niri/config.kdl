@@ -1,0 +1,10 @@
+// refer: https://yalter.github.io/niri/Configuration:-Introduction
+
+input {
+    keyboard {
+        xkb {
+            layout "us" 
+    		options "caps:swapescape,shift:both_capslock,ctrl:swap_ralt_rctl"
+        }
+    }
+}
