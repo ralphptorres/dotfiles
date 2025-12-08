@@ -7,6 +7,11 @@ input {
     		options "caps:swapescape,shift:both_capslock,ctrl:swap_ralt_rctl"
         }
     }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
 }
 
 output "eDP-1" {
