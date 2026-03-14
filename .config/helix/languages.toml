@@ -5,6 +5,9 @@ command = "basedpyright-langserver"
 args = ["--stdio"]
 config.basedpyright.analysis.typeCheckingMode = "basic"
 
+[language-server.gpt]
+command = "helix-gpt"
+
 [language-server.ruff]
 command = "ruff"
 args = ["server"]
@@ -60,13 +63,13 @@ language-servers = ["texlab", "typos-lsp"]
 name = "markdown"
 auto-format = true
 formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
-language-servers = ["markdown-oxide", "typos-lsp"]
+language-servers = ["gpt", "markdown-oxide", "typos-lsp"]
 comment-tokens = ["-", "*", "- [ ]", ">"]
 
 [[language]]
 name = "python"
 auto-format = true
-language-servers = ["basedpyright", "ruff", "ty"]
+language-servers = ["basedpyright", "gpt", "ruff", "ty"]
 
 [[language]]
 name = "toml"
@@ -77,7 +80,7 @@ formatter = { command = "dprint", args = ["fmt", "--stdin", "toml"] }
 name = "typst"
 auto-format = true
 formatter = { command = "typstyle", args = ["--wrap-text"] }
-language-servers = ["tinymist"]
+language-servers = ["gpt", "tinymist"]
 
 [[language]]
 name = "yaml"
