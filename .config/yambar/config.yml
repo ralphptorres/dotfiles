@@ -63,7 +63,7 @@ bar:
               focused: {map: {<<: *rid, deco: *ul}}
               occupied: {map: {<<: *rid}}
     - script:
-        path: ~/.local/bin/yquery
+        path: ~/.local/bin/Linux/yquery
         args: ["lyrics"]
         content:
           - string: {text: "🎼"}
