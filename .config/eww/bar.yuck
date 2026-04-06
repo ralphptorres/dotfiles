@@ -6,7 +6,7 @@
     :width "57px"
     :anchor "left center")
   :exclusive true
-  :monitor "Color LCD"
+  :monitor 0
 
   (box :orientation "v"
     (box :orientation "v" :space-evenly false :valign "start"

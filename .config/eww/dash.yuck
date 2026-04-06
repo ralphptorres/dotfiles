@@ -5,7 +5,7 @@
     :height "100%"
     :width "1050"
     :anchor "left center")
-  :monitor '["Artist 12 pro", "LCD", "Color LCD"]'
+  :monitor '["Artist 12 pro", "LCD", 0]'
   :stacking "fg"
 
   (box :orientation "v" :space-evenly false 
