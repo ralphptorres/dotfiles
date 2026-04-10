@@ -1,0 +1,5 @@
+inherits = "base16_transparent"
+
+"ui.linenr" = "default"
+"ui.virtual.whitespace" = "default"
+"ui.virtual.wrap" = "default"
