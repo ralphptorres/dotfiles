@@ -1,9 +1,8 @@
 theme = "base16_transparent"
 
 [editor]
-
 line-number = "relative"
-rulers = [80,100]
+rulers = [80, 100]
 
 lsp.display-inlay-hints = true
 indent-guides.render = true
@@ -11,93 +10,101 @@ soft-wrap.enable = true
 smart-tab.supersede-menu = true
 
 [keys.normal.' ']
-
 '=' = ":reflow"
 '.' = ":pipe-to tmux load-buffer - \\; paste-buffer -dpr \\; send-keys Enter"
 ',' = "@/^#<space>%%<ret>Ni#<esc>nF<ret>;vg.<esc>_<space>.un"
 '>' = ":sh footclient tmux new -n repl 'uv run ipython'"
 
 [keys.insert.','.',']
-
-a = [":insert-output printf %s '\\alpha'",  "move_char_right"]
-b = [":insert-output printf %s '\\beta'",   "move_char_right"]
-c = [":insert-output printf %s '\\xi'",     "move_char_right"]
-d = [":insert-output printf %s '\\delta'",  "move_char_right"]
-e = [":insert-output printf %s '\\epsilon'","move_char_right"]
-f = [":insert-output printf %s '\\phi'",    "move_char_right"]
-g = [":insert-output printf %s '\\gamma'",  "move_char_right"]
-h = [":insert-output printf %s '\\eta'",    "move_char_right"]
-i = [":insert-output printf %s '\\iota'",   "move_char_right"]
-k = [":insert-output printf %s '\\kappa'",  "move_char_right"]
+a = [":insert-output printf %s '\\alpha'", "move_char_right"]
+b = [":insert-output printf %s '\\beta'", "move_char_right"]
+c = [":insert-output printf %s '\\xi'", "move_char_right"]
+d = [":insert-output printf %s '\\delta'", "move_char_right"]
+e = [":insert-output printf %s '\\epsilon'", "move_char_right"]
+f = [":insert-output printf %s '\\phi'", "move_char_right"]
+g = [":insert-output printf %s '\\gamma'", "move_char_right"]
+h = [":insert-output printf %s '\\eta'", "move_char_right"]
+i = [":insert-output printf %s '\\iota'", "move_char_right"]
+k = [":insert-output printf %s '\\kappa'", "move_char_right"]
 l = [":insert-output printf %s '\\lambda'", "move_char_right"]
-m = [":insert-output printf %s '\\mu'",     "move_char_right"]
-n = [":insert-output printf %s '\\nu'",     "move_char_right"]
-o = [":insert-output printf %s '\\theta'",  "move_char_right"]
-p = [":insert-output printf %s '\\pi'",     "move_char_right"]
-r = [":insert-output printf %s '\\rho'",    "move_char_right"]
-s = [":insert-output printf %s '\\sigma'",  "move_char_right"]
-t = [":insert-output printf %s '\\tau'",    "move_char_right"]
-u = [":insert-output printf %s '\\upsilon'","move_char_right"]
-w = [":insert-output printf %s '\\omega'",  "move_char_right"]
-x = [":insert-output printf %s '\\chi'",    "move_char_right"]
-y = [":insert-output printf %s '\\psi'",    "move_char_right"]
-z = [":insert-output printf %s '\\zeta'",   "move_char_right"]
-C = [":insert-output printf %s '\\Xi'",     "move_char_right"]
-D = [":insert-output printf %s '\\Delta'",  "move_char_right"]
-F = [":insert-output printf %s '\\Phi'",    "move_char_right"]
-G = [":insert-output printf %s '\\Gamma'",  "move_char_right"]
+m = [":insert-output printf %s '\\mu'", "move_char_right"]
+n = [":insert-output printf %s '\\nu'", "move_char_right"]
+o = [":insert-output printf %s '\\theta'", "move_char_right"]
+p = [":insert-output printf %s '\\pi'", "move_char_right"]
+r = [":insert-output printf %s '\\rho'", "move_char_right"]
+s = [":insert-output printf %s '\\sigma'", "move_char_right"]
+t = [":insert-output printf %s '\\tau'", "move_char_right"]
+u = [":insert-output printf %s '\\upsilon'", "move_char_right"]
+w = [":insert-output printf %s '\\omega'", "move_char_right"]
+x = [":insert-output printf %s '\\chi'", "move_char_right"]
+y = [":insert-output printf %s '\\psi'", "move_char_right"]
+z = [":insert-output printf %s '\\zeta'", "move_char_right"]
+C = [":insert-output printf %s '\\Xi'", "move_char_right"]
+D = [":insert-output printf %s '\\Delta'", "move_char_right"]
+F = [":insert-output printf %s '\\Phi'", "move_char_right"]
+G = [":insert-output printf %s '\\Gamma'", "move_char_right"]
 L = [":insert-output printf %s '\\Lambda'", "move_char_right"]
-O = [":insert-output printf %s '\\Theta'",  "move_char_right"]
-P = [":insert-output printf %s '\\Pi'",     "move_char_right"]
-S = [":insert-output printf %s '\\Sigma'",  "move_char_right"]
-U = [":insert-output printf %s '\\Upsilon'","move_char_right"]
-Y = [":insert-output printf %s '\\Psi'",    "move_char_right"]
+O = [":insert-output printf %s '\\Theta'", "move_char_right"]
+P = [":insert-output printf %s '\\Pi'", "move_char_right"]
+S = [":insert-output printf %s '\\Sigma'", "move_char_right"]
+U = [":insert-output printf %s '\\Upsilon'", "move_char_right"]
+Y = [":insert-output printf %s '\\Psi'", "move_char_right"]
 
-1 = [":insert-output printf %s '\\^{-1}'",                     "move_char_right"]
+1 = [":insert-output printf %s '\\^{-1}'", "move_char_right"]
 2 = [":insert-output printf %s '\\sqrt{}'"]
 3 = [":insert-output printf %s '\\vec{}'"]
 '#' = [":insert-output printf %s '\\hat{}'"]
 4 = [":insert-output printf %s '\\mathbb{}'"]
 '$' = [":insert-output printf %s '\\mathcal{}'"]
 5 = [":insert-output printf %s '\\text{}'"]
-'%' = [":insert-output printf %s '\\SI{}{}'",                  "move_char_left","move_char_left"]
+'%' = [":insert-output printf %s '\\SI{}{}'", "move_char_left", "move_char_left"]
 6 = [":insert-output printf %s '^{}'"]
 _ = [":insert-output printf %s '_{}'"]
 8 = [":insert-output printf %s '\\overline{}'"]
-9 = [":insert-output printf %s '\\left( x \\right)'",          "select_regex"]
-0 = [":insert-output printf %s '\\infty'",                     "move_char_right"]
-'=' = [":insert-output printf %s '\\int_{-\\infty}^{\\infty}'","move_char_right"]
-'+' = [":insert-output printf %s '\\sum_{n=1}^{\\infty}'",     "move_char_right"]
-'[' = [":insert-output printf %s '\\left[ x \\right]'",        "select_regex"]
-'{' = [":insert-output printf %s '\\{ x \\}'",                 "select_regex"]
-'|' = [":insert-output printf %s '\\| x \\|'",                 "select_regex"]
-'<' = [":insert-output printf %s '\\left< x \\right>'",        "select_regex"]
-'/' = [":insert-output printf %s '\\frac{}{}'",                "move_char_left","move_char_left"]
-'?' = [":insert-output printf %s '\\frac{\\partial x}{\\partial x}'","select_regex"]
+9 = [":insert-output printf %s '\\left( x \\right)'", "select_regex"]
+0 = [":insert-output printf %s '\\infty'", "move_char_right"]
+'=' = [":insert-output printf %s '\\int_{-\\infty}^{\\infty}'", "move_char_right"]
+'+' = [":insert-output printf %s '\\sum_{n=1}^{\\infty}'", "move_char_right"]
+'[' = [":insert-output printf %s '\\left[ x \\right]'", "select_regex"]
+'{' = [":insert-output printf %s '\\{ x \\}'", "select_regex"]
+'|' = [":insert-output printf %s '\\| x \\|'", "select_regex"]
+'<' = [":insert-output printf %s '\\left< x \\right>'", "select_regex"]
+'/' = [":insert-output printf %s '\\frac{}{}'", "move_char_left", "move_char_left"]
+'?' = [":insert-output printf %s '\\frac{\\partial x}{\\partial x}'", "select_regex"]
 
 [keys.insert.','.','.v]
-
-e = [":insert-output printf %s '\\varepsilon'","move_char_right"]
-f = [":insert-output printf %s '\\varphi'",    "move_char_right"]
-k = [":insert-output printf %s '\\varkappa'",  "move_char_right"]
-o = [":insert-output printf %s '\\vartheta'",  "move_char_right"]
-p = [":insert-output printf %s '\\varpi'",     "move_char_right"]
-r = [":insert-output printf %s '\\varrho'",    "move_char_right"]
-s = [":insert-output printf %s '\\varsigma'",  "move_char_right"]
-t = [":insert-output printf %s '\\varsigma'",  "move_char_right"]
+e = [":insert-output printf %s '\\varepsilon'", "move_char_right"]
+f = [":insert-output printf %s '\\varphi'", "move_char_right"]
+k = [":insert-output printf %s '\\varkappa'", "move_char_right"]
+o = [":insert-output printf %s '\\vartheta'", "move_char_right"]
+p = [":insert-output printf %s '\\varpi'", "move_char_right"]
+r = [":insert-output printf %s '\\varrho'", "move_char_right"]
+s = [":insert-output printf %s '\\varsigma'", "move_char_right"]
+t = [":insert-output printf %s '\\varsigma'", "move_char_right"]
 
 [keys.insert.','.','.j]
+E = [":append-output printf %s '\\begin{equation*}\n\n\\end{equation*}'", "move_line_up"]
+A = [":append-output printf %s '\\begin{align*}\n\n\\end{align*}'", "move_line_up"]
+e = [":append-output printf %s '\\begin{equation}\n\n\\end{equation}'", "move_line_up"]
+a = [":append-output printf %s '\\begin{align}\n\n\\end{align}'", "move_line_up"]
+g = [":append-output printf %s '\\begin{gather}\n\n\\end{gather}'", "move_line_up"]
+c = [":append-output printf %s '\\begin{cases}\n\n\\end{cases}'", "move_line_up"]
+o = [":append-output printf %s '\\begin{enumerate}\n\t\\item\n\\end{enumerate}'", "move_line_up"]
+u = [":append-output printf %s '\\begin{itemize}\n\t\\item\n\\end{itemize}'", "move_line_up"]
 
-E = [":append-output printf %s '\\begin{equation*}\n\n\\end{equation*}'","move_line_up"]
-A = [":append-output printf %s '\\begin{align*}\n\n\\end{align*}'",      "move_line_up"]
-e = [":append-output printf %s '\\begin{equation}\n\n\\end{equation}'",  "move_line_up"]
-a = [":append-output printf %s '\\begin{align}\n\n\\end{align}'",        "move_line_up"]
-g = [":append-output printf %s '\\begin{gather}\n\n\\end{gather}'",      "move_line_up"]
-c = [":append-output printf %s '\\begin{cases}\n\n\\end{cases}'",        "move_line_up"]
-o = [":append-output printf %s '\\begin{enumerate}\n\t\\item\n\\end{enumerate}'","move_line_up"]
-u = [":append-output printf %s '\\begin{itemize}\n\t\\item\n\\end{itemize}'",    "move_line_up"]
-
-f = [":append-output printf %s '\\begin{figure}[htpb]\n\t\\centering\n\t\\includegraphics[width=0.8\\textwidth]{fig/x}\n\t\\caption{x}\n\t\\label{f-x}\n\\end{figure}'","select_regex"]
-t = [":append-output printf %s '\\begin{table}[htpb]\n\t\\centering\n\t\\caption{x}\n\t\\label{t-x}\n\t\\begin{tabular}{ccc}\n\n\t\\end{tabular}\n\\end{table}'","select_regex"]
-p = [":append-output printf %s '\\begin{figure}[htpb]\n\t\\centering\n\t\\begin{tikzpicture}\n\t\t\\begin{axis}[\n\t\t\txmin=-10,xmax=10,\n\t\t\tymin=-10,ymax=10,\n\t\t\taxis lines = middle,\n\t\t]\n\t\t\t\\addplot[domain=X:X,samples=100]{X};\n\t\t\\end{axis}\n\t\\end{tikzpicture}\n\t\\caption{X}\n\t\\label{p-X}\n\\end{figure}'","select_regex"]
-z = [":append-output printf %s '\\documentclass[a4paper]{article}\n\\usepackage{amsmath,amssymb}\n\n\\begin{document}\n\n\\end{document}' ''", "move_line_up"]
+f = [
+  ":append-output printf %s '\\begin{figure}[htpb]\n\t\\centering\n\t\\includegraphics[width=0.8\\textwidth]{fig/x}\n\t\\caption{x}\n\t\\label{f-x}\n\\end{figure}'",
+  "select_regex",
+]
+t = [
+  ":append-output printf %s '\\begin{table}[htpb]\n\t\\centering\n\t\\caption{x}\n\t\\label{t-x}\n\t\\begin{tabular}{ccc}\n\n\t\\end{tabular}\n\\end{table}'",
+  "select_regex",
+]
+p = [
+  ":append-output printf %s '\\begin{figure}[htpb]\n\t\\centering\n\t\\begin{tikzpicture}\n\t\t\\begin{axis}[\n\t\t\txmin=-10,xmax=10,\n\t\t\tymin=-10,ymax=10,\n\t\t\taxis lines = middle,\n\t\t]\n\t\t\t\\addplot[domain=X:X,samples=100]{X};\n\t\t\\end{axis}\n\t\\end{tikzpicture}\n\t\\caption{X}\n\t\\label{p-X}\n\\end{figure}'",
+  "select_regex",
+]
+z = [
+  ":append-output printf %s '\\documentclass[a4paper]{article}\n\\usepackage{amsmath,amssymb}\n\n\\begin{document}\n\n\\end{document}' ''",
+  "move_line_up",
+]
