@@ -11,6 +11,11 @@
 ; (defvar tagssym `["𜳱", "𜳲", "𜳳", "𜳴", "𜳵", "𜳶", "𜳷", "𜳸", "𜳹"]`)
 ; (defvar tagssym `["🯱", "🯲", "🯳", "🯴", "🯵", "🯶", "🯷", "🯸", "🯹"]`)
 
+(deflisten lyrics
+  :initial "🎼"
+  `sptlrx pipe`
+)
+
 (deflisten river
   :initial ""
   `ristate -w -t -u -vt`

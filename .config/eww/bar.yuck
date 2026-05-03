@@ -8,15 +8,21 @@
   :exclusive true
   :monitor 0
 
-  (box :orientation "v"
+  (centerbox :orientation "v"
     (box :orientation "v" :space-evenly false :valign "start"
       ""
       (for t in tags (tag :id t :symbol "${tagssym[t - 1]}"))
       ""
       (label :angle 90 :limit-width 20 :text {river.title})
+      ""
+    )
+
+    (box :orientation "v"
+      (label :angle 90 :text {lyrics})
     )
 
     (box :orientation "v" :space-evenly false :valign "end"
+      ""
       (metric-b
         :label "󰆨"
         :onclick `eww close dash || eww open dash`
