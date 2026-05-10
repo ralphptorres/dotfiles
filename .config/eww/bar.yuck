@@ -3,7 +3,7 @@
   	:x "0"
     :y "0"
     :height "100%"
-    :width "57px"
+    :width "59px"
     :anchor "left center")
   :exclusive true
   :monitor 0
