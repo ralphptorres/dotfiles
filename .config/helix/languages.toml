@@ -41,6 +41,7 @@ lint.when = "onSave"
 
 [language-server.typos-lsp]
 command = "typos-lsp"
+config.diagnosticSeverity = "Hint"
 
 [[language]]
 name = "bash"
