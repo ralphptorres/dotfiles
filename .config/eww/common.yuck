@@ -113,7 +113,7 @@
         :space-evenly {label1 != "" ? true : false}
         ; :spacing 2
         (label :class `text-${resize == true ? "big" : "bigger"}` :text {label})
-        (label :class "text-sml" :text {label1})
+        (label :class "text-sml" :limit-width 3 :text {label1})
       )
     )
   )
