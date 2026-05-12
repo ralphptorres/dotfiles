@@ -18,7 +18,7 @@
     )
 
     (box :orientation "v"
-      (label :angle 90 :text {lyrics})
+      (label :halign "center" :angle 90 :lines 2 :truncate true :text {lyrics})
     )
 
     (box :orientation "v" :space-evenly false :valign "end"
