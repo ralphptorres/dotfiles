@@ -1,3 +1,6 @@
 [user]
 name = Ralph Torres
 email = ralphtorres@embiggengroup.com
+
+[url "git@github-embiggen:"]
+insteadOf = git@github.com:
