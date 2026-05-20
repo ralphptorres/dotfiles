@@ -1,0 +1,35 @@
+#!/bin/sh
+
+file="$HOME/home/pic/screenshots/$(date +%Y%m%d-%H%M%S).png"
+
+if [ -z "$1" ]; then
+    grim -l 1 "$file"
+    notify-send -c capture "screenshotter" "save full screenshot done"
+    notify-send -a previewer -i "$file" " "
+    exit
+fi
+
+[ "$1" != "menu" ] && exit
+
+sel=$(printf "%s\n" \
+    "copy partial screenshot" \
+    "save partial screenshot" \
+    "copy full screenshot" \
+    "save full screenshot" |
+    fuzzel -d -p "screenshot > ")
+
+[ -z "$sel" ] && exit
+
+case "$sel" in
+copy*partial*) grim -l 1 -g "$(slurp -d)" - | wl-copy && s=0 ;;
+save*partial*) grim -l 1 -g "$(slurp -d)" "$file" && s=0 ;;
+copy*full*) grim -l 1 - | wl-copy && s=0 ;;
+save*full*) grim -l 1 "$file" && s=0 ;;
+esac
+
+if [ $s ]; then
+    notify-send -c capture "screenshotter" "$sel done" &
+    notify-send -u low -a previewer -i "$file" " " &
+else
+    notify-send -c capture "screenshotter" "$sel failed"
+fi

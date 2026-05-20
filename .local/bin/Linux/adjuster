@@ -1,0 +1,74 @@
+#!/bin/sh
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+
+var=$1
+dir=$2
+mag=${3:-5}
+
+case $var in
+b | backlight)
+    case $dir in
+    -) light -U $mag ;;
+    +) light -A $mag ;;
+    =) light -S $mag ;;
+    esac
+    val=$(light)
+    val=${val%%.*}
+    eww update utilb=$val
+    ;;
+k | keyboard)
+    case $dir in
+    -) light -s sysfs/leds/apple::kbd_backlight -U $mag ;;
+    +) light -s sysfs/leds/apple::kbd_backlight -A $mag ;;
+    esac
+    val=$(light -s sysfs/leds/apple::kbd_backlight)
+    val=${val%%.*}
+    eww update utilk=$val
+    ;;
+vo | vol_sink)
+    case $dir in
+    -) wpctl set-volume @DEFAULT_AUDIO_SINK@ $mag%- ;;
+    +) wpctl set-volume @DEFAULT_AUDIO_SINK@ $mag%+ -l 0.7 ;;
+    =) wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle ;;
+    esac
+    val=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+    mut=$(echo $val | cut -d' ' -f3)
+    # val=${val##.*}
+    val=$(awk '{printf "%.0f", $2 * 100}' <<< "$val")
+    var="volume$mut"
+    eww update utilvo=$val
+    eww update utilvos=$mut
+    ;;
+vi | vol_source)
+    case $dir in
+    -) wpctl set-volume @DEFAULT_AUDIO_SOURCE@ $mag%- ;;
+    +) wpctl set-volume @DEFAULT_AUDIO_SOURCE@ $mag%+ -l 1.0 ;;
+    =) wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle ;;
+    esac
+    val=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)
+    mut=$(echo $val | cut -d' ' -f3)
+    # val=${val##*.}
+    val=$(awk '{printf "%.0f", $2 * 100}' <<< "$val")
+    var="mic$mut"
+    eww update utilvi=$val
+    eww update utilvis=$mut
+    ;;
+p | power_supply)
+    export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+    export DISPLAY=:0
+    dir=$(cat /sys/class/power_supply/ADP1/online)
+    val=$(cat /sys/class/power_supply/BAT0/capacity)
+    case $dir in
+    0) var="on battery ($val%)" ;;
+    1) var="charging ($val%)" ;;
+    esac
+    id=$(echo $0 | md5sum | tr -d "[a-z]" | cut -c1-5)
+    su ralph -c "notify-send -r $id -a power -u low -c progress \
+        -h int:value:$val '$var' &"
+    ;;
+esac
+
+id=$(echo $0 | md5sum | tr -d "[a-z]" | cut -c1-5)
+notify-send -r $id -a adjust -u low -c progress -h int:value:$val \
+    "adjust $var: $val" &

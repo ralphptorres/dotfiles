@@ -1,0 +1,130 @@
+#!/bin/sh
+
+case "$1" in
+lyrics)
+    sptlrx pipe | while IFS= read -r line; do
+        printf "lyric|string|%s\n\n" "$line"
+    done
+    ;;
+
+music)
+    set -- status shuffle loop position mpris:length playerName xesam:url
+    info=$(echo "$@" | sed -e 's/ /}}\\t{{/g')
+    info=$(playerctl metadata -f {{$info}} 2>/dev/null)
+
+    for x in "$@"; do
+        eval ${x##*:}=${info%%\\t*}
+        info=${info#*\\t}
+    done
+
+    case "$status" in
+    Paused | Playing) ;;
+    *) printf '%s\n' "set|bool|false" "" && exit ;;
+    esac
+
+    if [ "$length" ]; then
+        progset=true progval=$(((100 * $position) / $length))
+    else
+        progset=false
+    fi
+
+    case "$playerName" in
+    spotify* | ncspot) player=spotify color=1db954ff ;;
+    firefox)
+        case "$url" in
+        *youtube.com*) player=youtube color=ff0000ff ;;
+        esac
+        ;;
+    esac
+
+    set -- xesam:albumArtist artist title xesam:contentCreated album
+    info=$(echo "$@" | sed -e 's/ /}}\t{{/g')
+    info=$(playerctl metadata -f {{"$info"}} 2>/dev/null)
+
+    artist=$(echo "$info" | cut -f1)
+    [ -z "$artist" ] && artist=$(echo "$info" | cut -f2)
+    title=$(echo "$info" | cut -f3)
+    year=$(echo "$info" | cut -f4 | cut -d- -f1)
+    album=$(echo "$info" | cut -f5)
+
+    [ -n "$artist" ] && metadata="$artist, "
+    [ -n "$title" ] && metadata="$metadata\"$title\""
+    if [ -n "$album" ] && [ ! "$album" = "$title" ]; then
+        metadata="$metadata, $album"
+    fi
+    [ -n "$year" ] && metadata="$metadata ($year)"
+
+    # [ $(echo "$metadata" | wc -c) -gt 50 ] && metadata=$(echo $metadata | cut -d',' -f2)
+
+    printf '%s\n' "set|bool|true" "status|string|$status" \
+        "shuffle|string|$shuffle" "loop|string|$loop" \
+        "progset|bool|$progset" "progval|range:0-100|$progval" \
+        "player|string|$player" "metadata|string| $metadata" ""
+    # "playerclr|color|$color" \
+    ;;
+
+infos)
+    # weather
+    report=${XDG_DATA_HOME:-$HOME/.local/share}/weather.txt
+    age=$((($(date +%s) - $(stat -c %Y $report)) / 3600))
+    weather="📰 $age h ago"
+
+    set -- "" Singapore Cracow "Quezon City"
+    cities=$(echo "$@" | tr ' ' ,)
+    data=$(curl -s wttr.in/{$cities}?format=1 | tr -d ' +CF' | tr '\n' ' ')
+
+    if [ -n "$data" ]; then
+        unset weather
+        for city in "$@"; do
+            weather="$weather${data%% *}$(echo $city | cut -b1-2) "
+            data=${data#* }
+        done
+        curl -s v2.wttr.in/{$cities}?A >$report
+    fi
+
+    # pacman
+    printf "%s\n" "pacman|string|..." ""
+    n_pac=$(pacman -Qu | wc -l)
+    n_aur=$(pacman -Qmu | wc -l)
+    # n_aur=$(paru -Qua | wc -l)
+    [ "$n_pac" -gt 0 ] && pacman="📦$n_pac"
+    [ "$n_aur" -gt 0 ] && pacman="🗳️$n_aur"
+
+    notify-send -u critical "yambar" \
+        "infos module was updated last $(date +%H%M)"
+    printf "%s\n" "set|bool|true" "pacman|string|$pacman" \
+        "weather|string|$weather" ""
+    ;;
+
+toggles)
+    # swayidle
+    if [ "$(pgrep swayidle 2>/dev/null)" ]; then
+        printf "%s\n" "idle|bool|true"
+    else
+        printf "%s\n" "idle|bool|false"
+    fi
+
+    # pomo
+    if [ "$(pgrep pomo 2>/dev/null)" ]; then
+        printf "%s\n" "pomo|bool|true"
+    else
+        printf "%s\n" "pomo|bool|false"
+    fi
+
+    # mako
+    mode=$(makoctl mode 2>/dev/null | tr '\n' ' ')
+    case "$mode" in
+    *dnd*) printf "%s\n" "dnd|bool|true" ;;
+    *) printf "%s\n" "dnd|bool|false" ;;
+    esac
+
+    # # fnott
+    # mode=$(cat $XDG_DATA_HOME/dnd 2>/dev/null)
+    # case "$mode" in
+    # 1) printf "%s\n" "dnd|bool|true" ;;
+    # 0) printf "%s\n" "dnd|bool|false" ;;
+    # esac
+
+    printf "\n"
+    ;;
+esac

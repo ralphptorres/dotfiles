@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case "$1" in
+music)
+	playerctl metadata |
+	sed -E 's/^\w+ \w*://g; s/\s\s+/\t/g' |
+	jq -sR 'split("\n")  |
+		map(select(length > 0)) |
+		map(split("\t")) |
+		map({key: .[0], value: .[1]}) |
+		from_entries'
+;;
+esac
