@@ -4,7 +4,7 @@ This is repo of my config files for my archlinux-based macbook. For those who
 aren't aware, these files are called dotfiles because either its filename or its
 parent dirname starts with a dot, eg. `.env`, `.profile`, `.config`, `.local/share`.
 
-![](.local/share/dotfiles/20250709-060237.png)
+![](https://github.com/user-attachments/assets/c128acb4-8cd4-4bb8-b9ca-e3956a089567)
 
 ## next
 
@@ -52,7 +52,7 @@ The tools I use for productivity are
 
 My current setup looks like this:
 
-![](.local/share/dotfiles/archv3.png)
+![](https://github.com/user-attachments/assets/616d52e7-fa91-4a40-a550-8f343cc11c01)
 
 [archlinux]: https://archlinux.org
 [river]: https://github.com/koekeishiya/yabai
@@ -101,7 +101,7 @@ Unfortunately, I couldn't find screenshots of my old macos setup.
 
 My arch setup used to look like this (it's not the prettiest, I know):
 
-![](.local/share/dotfiles/archv1,2.png)
+![](https://github.com/user-attachments/assets/2d3202a9-39d9-4f3e-bb04-24558aaefaff)
 
 [yabai]: https://github.com/koekeishiya/yabai
 [sketchybar]: https://github.com/FelixKratz/SketchyBar
