@@ -20,5 +20,5 @@ smtpuser = ralphptorres@icloud.com
 smtpencryption = ssl
 smtpserverport = 465
 
-[includeIf "gitdir:~/work/src/embiggen/"]
+[includeIf "gitdir:~/src/embiggen/"]
 path = config-embiggen
