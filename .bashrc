@@ -26,7 +26,7 @@ PS1="\n"
 [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && PS1="$USER@$HOSTNAME "
 PS1="$PS1\w "
 [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" ] && \
-  PS1="$PS1$(git symbolic-ref HEAD 2>/dev/null | cut -d/ -f3)"
+  PS1="$PS1$(git symbolic-ref HEAD 2>/dev/null | cut -d/ -f3-)"
 PS1="$PS1\n\`if [ \$? -ne 0 ]; then printf \[\e[7m\]; fi\`>\[\e[m\] "
 EOF
 )
