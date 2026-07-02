@@ -190,3 +190,7 @@ window-rule {
         blur true    
     }
 }    
+
+layer-rule {    
+    opacity 0.85
+}
