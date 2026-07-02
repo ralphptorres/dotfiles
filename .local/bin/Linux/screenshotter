@@ -12,6 +12,7 @@ fi
 [ "$1" != "menu" ] && exit
 
 sel=$(printf "%s\n" \
+    "copy partial screenshot w no bg" \
     "copy partial screenshot" \
     "save partial screenshot" \
     "copy full screenshot" \
@@ -21,6 +22,8 @@ sel=$(printf "%s\n" \
 [ -z "$sel" ] && exit
 
 case "$sel" in
+copy*partial*bg) grim -l 1 -g "$(slurp -d)" - | convert - -transparent white - |\
+    wl-copy && s=0 ;;
 copy*partial*) grim -l 1 -g "$(slurp -d)" - | wl-copy && s=0 ;;
 save*partial*) grim -l 1 -g "$(slurp -d)" "$file" && s=0 ;;
 copy*full*) grim -l 1 - | wl-copy && s=0 ;;
