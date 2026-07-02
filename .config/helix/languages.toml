@@ -63,7 +63,7 @@ language-servers = ["texlab", "typos"]
 [[language]]
 name = "markdown"
 formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
-language-servers = ["gpt", "markdown-oxide", "typos"]
+language-servers = ["markdown-oxide", "typos"]
 comment-tokens = ["-", "*", "- [ ]", ">"]
 
 [[language]]
@@ -78,7 +78,7 @@ formatter = { command = "dprint", args = ["fmt", "--stdin", "toml"] }
 [[language]]
 name = "typst"
 formatter = { command = "typstyle", args = ["--wrap-text"] }
-language-servers = ["gpt", "tinymist"]
+language-servers = ["tinymist", "typos"]
 
 [[language]]
 name = "yaml"
