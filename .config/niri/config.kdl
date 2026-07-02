@@ -194,3 +194,12 @@ window-rule {
 layer-rule {    
     opacity 0.85
 }
+
+layer-rule {    
+    match namespace="^eww$"
+    match layer="top"
+    
+    background-effect {
+        blur true    
+    }
+}    
