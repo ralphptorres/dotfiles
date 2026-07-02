@@ -15,22 +15,16 @@ export TEXMFCONFIG=$XDG_CONFIG_HOME/texmf
 export TEXMFDIST=/usr/share/texmf-dist
 
 if [ ${0##*/} = bash ]
-then
-    . $ENV
+then . $ENV
 fi
-
-# wm=$(cat << 'eof'
-# eof)
 
 if [ -z $WAYLAND_DISPLAY ] && [ $(tty) = /dev/tty1 ]
 then
     export XDG_SESSION_TYPE=wayland  # all, Qt5 apps
     export GDK_BACKEND=wayland       # gtk apps
-    # export MOZ_ENABLE_WAYLAND=1      # firefox
-    # export SAL_USE_VCLPLUGIN=gtk4    # libreoffice, buggy tho
     export XDG_CURRENT_DESKTOP=river # xdpw 
-    export XCURSOR_THEME=BreezeX-Light
-    export XCURSOR_SIZE=32
+    export XCURSOR_THEME=BreezeX-Dark
+    export XCURSOR_SIZE=45
 
     exec river
 fi
