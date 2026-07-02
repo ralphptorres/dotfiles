@@ -221,3 +221,10 @@ gestures {
         top-left
     }
 }
+
+recent-windows {
+    highlight {
+        active-color "#007bc0"
+        urgent-color "#f75f59"
+    }
+}
