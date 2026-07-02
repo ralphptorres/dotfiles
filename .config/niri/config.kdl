@@ -211,3 +211,7 @@ layer-rule {
         blur true    
     }
 }    
+
+animations {
+    slowdown 0.75
+}
