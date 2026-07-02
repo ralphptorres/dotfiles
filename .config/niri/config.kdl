@@ -162,3 +162,12 @@ cursor {
     xcursor-theme "BreezeX-Dark"
     xcursor-size 45
 }
+
+overview {
+    zoom 0.5
+    // backdrop-color "#fafef9"
+
+    workspace-shadow {
+        off
+    }     
+}
