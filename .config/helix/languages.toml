@@ -39,7 +39,7 @@ formatterProseWrap = true
 lint.enabled = true
 lint.when = "onSave"
 
-[language-server.typos-lsp]
+[language-server.typos]
 command = "typos-lsp"
 config.diagnosticSeverity = "Hint"
 
@@ -49,7 +49,7 @@ indent = { tab-width = 4, unit = "\t" }
 
 [[language]]
 name = "latex"
-language-servers = ["texlab", "typos-lsp"]
+language-servers = ["texlab", "typos"]
 
 [language.auto-pairs]
 '(' = ')'
@@ -63,7 +63,7 @@ language-servers = ["texlab", "typos-lsp"]
 [[language]]
 name = "markdown"
 formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
-language-servers = ["gpt", "markdown-oxide", "typos-lsp"]
+language-servers = ["gpt", "markdown-oxide", "typos"]
 comment-tokens = ["-", "*", "- [ ]", ">"]
 
 [[language]]
