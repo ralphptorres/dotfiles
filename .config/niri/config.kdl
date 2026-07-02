@@ -70,3 +70,14 @@ binds {
     Mod+Shift+8 { move-window-to-workspace 8; }
     Mod+Shift+9 { move-window-to-workspace 9; }
     Mod+Shift+0 { focus-workspace-previous; }
+    // grave minus equal backspace
+
+    Mod+Q       repeat=false { close-window; }
+    Mod+Alt+Control+Q        { quit; }
+    Mod+T       repeat=false { spawn-sh "screenshotter"; }
+    Mod+Shift+T repeat=false { spawn-sh "screenshotter menu"; }
+    Mod+Y       repeat=false { spawn-sh "fnottctl dismiss"; }
+    Mod+Shift+Y repeat=false { spawn-sh "fnottctl dismiss all"; }
+    Mod+U       repeat=false { spawn-sh "eww close bar || eww open bar"; }
+    Mod+Shift+U repeat=false { spawn-sh "eww close dash || eww open dash"; }
+    // E R I O P bracketleft bracketright backslash 
