@@ -108,6 +108,33 @@ My arch setup used to look like this (it's not the prettiest, I know):
 [skhd]: https://github.com/koekeishiya/skhd
 [alacritty]: https://github.com/alacritty/alacritty
 
+## shell config flow
+
+Load order isn't obvious at a glance, so here's the gist.
+
+- Once per login, `bash` reads `~/.profile`, which
+  - sources `~/.config/Linux.profile` (or `Darwin.profile`, via `uname -s`),
+    which sources `$ENV` (`~/.env`) once, then `exec`s `river` or `niri-session`
+    by tty, replacing the shell
+  - sources `~/.config/$(uname -n).profile` for machine-specific overrides
+- Every later interactive shell (e.g. a new `footclient` window) skips straight
+  to `~/.env`, since `.profile` exports `POSIXLY_CORRECT`, which makes bash
+  auto-source `$ENV` on every interactive shell
+  - `.env` sources `~/.bashrc` when `$0` is `bash`
+  - `dash` needs no such trick, it auto-sources `$ENV` natively as posix, so
+    `.env` sets its own `PS1` and `set -bV` for it
+
+Where stuff goes:
+
+- `~/.profile` - env vars needed session-wide, including by non-shell gui
+  children (`PATH`, xdg dirs, locale)
+- `~/.config/Linux.profile`, `Darwin.profile` - os-specific env vars, plus the
+  compositor launch dispatch by tty
+- `~/.config/$(uname -n).profile` - machine-specific overrides
+- `~/.env` - shell-agnostic (dash + bash) aliases, functions, and `PS1`
+- `~/.bashrc` - bash-only keybindings, history, completions, and
+  `PROMPT_COMMAND` prompt, which supersedes `.env`'s `PS1` in bash
+
 ## hardware
 
 I rock a very low-spec'd laptop (intel-based macbook air lol) and so
