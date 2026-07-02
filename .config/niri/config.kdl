@@ -215,3 +215,9 @@ layer-rule {
 animations {
     slowdown 0.75
 }
+
+gestures {
+    hot-corners {
+        top-left
+    }
+}
