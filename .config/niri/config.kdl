@@ -118,3 +118,7 @@ binds {
     Mod+Shift+space repeat=false { spawn-sh "foot"; }
     // Z X C V N period slash
 }
+
+switch-events {
+    lid-close { spawn "systemctl" "suspend"; }
+}
