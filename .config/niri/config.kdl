@@ -81,3 +81,30 @@ binds {
     Mod+U       repeat=false { spawn-sh "eww close bar || eww open bar"; }
     Mod+Shift+U repeat=false { spawn-sh "eww close dash || eww open dash"; }
     // E R I O P bracketleft bracketright backslash 
+
+    Mod+F            { maximize-column; }
+    Mod+Shift+F      { maximize-window-to-edges; }
+    Mod+Ctrl+F       { fullscreen-window; }
+    Mod+G            { center-column; }
+    Mod+Shift+G      { switch-preset-column-width; }
+    Mod+H            { focus-column-left; }
+    Mod+L            { focus-column-right; }
+    // Mod+H            { switch-preset-column-width-back; }
+    // Mod+L            { switch-preset-column-width; }
+    Mod+J            { focus-window-down-or-column-right; }
+    Mod+K            { focus-window-up-or-column-left; }
+    Mod+Shift+H      { move-column-left; }
+    Mod+Shift+L      { move-column-right; }
+    Mod+Shift+J      { consume-or-expel-window-right; }
+    Mod+Shift+K      { consume-or-expel-window-left; }
+    Mod+Ctrl+J       { focus-monitor-next; }
+    Mod+Ctrl+K       { focus-monitor-previous; }
+    Mod+Ctrl+Shift+J { move-window-to-monitor-next; }
+    Mod+Ctrl+Shift+K { move-window-to-monitor-previous; }
+    Mod+Alt+H        { set-window-width "-50"; }
+    Mod+Alt+L        { set-window-width "+50"; }
+    Mod+Alt+J        { set-window-height "+50"; }
+    Mod+Alt+K        { set-window-height "-50"; }
+    Mod+return       { move-column-to-first; }
+    Mod+Shift+return { toggle-window-floating; } 
+    // A S D semicolon apostrophe 
