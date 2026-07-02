@@ -182,3 +182,11 @@ window-rule {
     draw-border-with-background false    
     opacity 0.85
 }    
+
+window-rule {    
+    match app-id="firefox|gnome|spotify|zathura"
+    
+    background-effect {
+        blur true    
+    }
+}    
