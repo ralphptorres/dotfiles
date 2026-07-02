@@ -156,7 +156,11 @@ gsettings set org.gnome.desktop.interface color-scheme prefer-light
 gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
 gsettings set org.gnome.desktop.interface cursor-theme BreezeX-Dark
 gsettings set org.gnome.desktop.interface cursor-size 45
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river # for xdpw
+
+systemctl --user unset-environment DISPLAY # for xdpw
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+systemctl --user start river-session.target
 
 # execute external utils
 
