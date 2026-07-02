@@ -122,3 +122,26 @@ binds {
 switch-events {
     lid-close { spawn "systemctl" "suspend"; }
 }
+
+layout {
+    gaps 5
+    // center-focused-column "on-overflow"
+    always-center-single-column
+    background-color "#fafef9"
+
+    focus-ring {
+        // off
+        width 3
+        active-color "#007bc0" // b case0.d 
+        urgent-color "#f75f59" // r shot0
+    }
+
+    insert-hint {
+        color "#007bc080"
+    }
+
+    struts {
+        // top 16
+        // bottom 16
+    }
+}
