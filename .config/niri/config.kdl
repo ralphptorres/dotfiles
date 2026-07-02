@@ -7,7 +7,7 @@ input {
     		options "caps:swapescape,shift:both_capslock,ctrl:swap_ralt_rctl"
         }
 
-        repeat-delay 500
+        repeat-delay 300
         repeat-rate 50
     }
 
@@ -16,19 +16,10 @@ input {
         natural-scroll
     }
 
+    warp-mouse-to-focus
     focus-follows-mouse
 }
 
 output "eDP-1" {
     scale 1
-}
-
-spawn-at-startup "foot --server"
-
-binds {
-    Mod+Q             { close-window; }
-    Mod+Alt+Control+Q { quit; }
-    Mod+Shift+B       { spawn "firefox"; }
-    // Mod+Space         { spawn "footclient || foot --server"; }
-    Mod+Space         { spawn "foot"; }
 }
