@@ -108,3 +108,13 @@ binds {
     Mod+return       { move-column-to-first; }
     Mod+Shift+return { toggle-window-floating; } 
     // A S D semicolon apostrophe 
+
+    Mod+B       repeat=false { spawn-sh "footclient -e lf"; }
+    Mod+Shift+B repeat=false { spawn-sh "firefox"; }
+    Mod+M       repeat=false { spawn-sh "footclient -e aerc"; }
+    Mod+shift+M repeat=false { spawn-sh "spotify"; }
+    Mod+comma   repeat=false { spawn-sh "fuzzel"; }
+    Mod+space   repeat=false { spawn-sh "footclient || foot --server"; }
+    Mod+Shift+space repeat=false { spawn-sh "foot"; }
+    // Z X C V N period slash
+}
