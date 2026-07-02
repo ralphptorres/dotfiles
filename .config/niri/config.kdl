@@ -145,3 +145,13 @@ layout {
         // bottom 16
     }
 }
+
+spawn-sh-at-startup "foot --server"
+spawn-sh-at-startup "swaybg -m fill -i \"$(find ~/home/pic/libreshot-city -type f | shuf -n1)\""
+spawn-sh-at-startup "eww open bar"
+spawn-sh-at-startup "foot --server"
+spawn-sh-at-startup "kanshi"
+spawn-sh-at-startup "mako"
+spawn-sh-at-startup "swayidle"
+spawn-sh-at-startup "wayneko --layer overlay --survive-close"
+spawn-sh-at-startup "mpd && mpd-mpris"
