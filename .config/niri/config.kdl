@@ -23,3 +23,29 @@ input {
 output "eDP-1" {
     scale 1
 }
+
+binds {    
+    XF86MonBrightnessDown       allow-when-locked=true repeat=false { spawn-sh "adjuster backlight - 5"; }    
+    XF86MonBrightnessUp         allow-when-locked=true repeat=false { spawn-sh "adjuster backlight + 5"; }    
+    Shift+XF86MonBrightnessDown allow-when-locked=true repeat=false { spawn-sh "adjuster backlight = 2"; }    
+    Shift+XF86MonBrightnessUp   allow-when-locked=true repeat=false { spawn-sh "wlr-randr --output eDP-1 --toggle"; }    
+    XF86LaunchA                 allow-when-locked=true repeat=false { spawn-sh "test"; }    
+    XF86LaunchB                 allow-when-locked=true repeat=false { spawn-sh "test"; }    
+    Shift+XF86LaunchA           allow-when-locked=true repeat=false { spawn-sh "test"; }    
+    Shift+XF86LaunchB           allow-when-locked=true repeat=false { spawn-sh "test"; }    
+    XF86KbdBrightnessDown       allow-when-locked=true repeat=false { spawn-sh "adjuster keyboard - 7"; }    
+    XF86KbdBrightnessUp         allow-when-locked=true repeat=false { spawn-sh "adjuster keyboard + 7"; }    
+    Shift+XF86KbdBrightnessDown allow-when-locked=true repeat=false { spawn-sh "test"; }    
+    Shift+XF86KbdBrightnessUp   allow-when-locked=true repeat=false { spawn-sh "test"; }    
+    XF86AudioPrev               allow-when-locked=true repeat=false { spawn-sh "playerctl previous"; }    
+    XF86AudioPlay               allow-when-locked=true repeat=false { spawn-sh "playerctl play-pause || ncmpcpp"; }    
+    XF86AudioNext               allow-when-locked=true repeat=false { spawn-sh "playerctl next"; }    
+    Shift+XF86AudioPrev         allow-when-locked=true repeat=false { spawn-sh "playerctl position 5-"; }    
+    Shift+XF86AudioPlay         allow-when-locked=true repeat=false { spawn-sh "playerctl shuffle toggle"; }    
+    Shift+XF86AudioNext         allow-when-locked=true repeat=false { spawn-sh "playerctl position 5+"; }
+    XF86AudioMute               allow-when-locked=true repeat=false { spawn-sh "adjuster vol_sink ="; }
+    XF86AudioLowerVolume        allow-when-locked=true repeat=false { spawn-sh "adjuster vol_sink - 5"; }
+    XF86AudioRaiseVolume        allow-when-locked=true repeat=false { spawn-sh "adjuster vol_sink + 5"; }
+    Shift+XF86AudioMute         allow-when-locked=true repeat=false { spawn-sh "adjuster vol_source ="; }
+    Shift+XF86AudioLowerVolume  allow-when-locked=true repeat=false { spawn-sh "adjuster vol_source - 5"; }
+    Shift+XF86AudioRaiseVolume  allow-when-locked=true repeat=false { spawn-sh "adjuster vol_source + 5"; }
