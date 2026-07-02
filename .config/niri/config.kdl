@@ -203,3 +203,11 @@ layer-rule {
         blur true    
     }
 }    
+
+layer-rule {    
+    match layer="overlay"
+    
+    background-effect {
+        blur true    
+    }
+}    
