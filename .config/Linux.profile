@@ -18,13 +18,21 @@ if [ ${0##*/} = bash ]
 then . $ENV
 fi
 
-if [ -z $WAYLAND_DISPLAY ] && [ $(tty) = /dev/tty1 ]
+if [ -z $WAYLAND_DISPLAY ]
 then
     export XDG_SESSION_TYPE=wayland  # all, Qt5 apps
     export GDK_BACKEND=wayland       # gtk apps
-    export XDG_CURRENT_DESKTOP=river # xdpw 
     export XCURSOR_THEME=BreezeX-Dark
     export XCURSOR_SIZE=45
 
-    exec river
+    case $(tty) in
+    /dev/tty1)
+        export XDG_CURRENT_DESKTOP=niri # xdpw
+        exec niri-session
+        ;;
+    /dev/tty2)
+        export XDG_CURRENT_DESKTOP=river
+        exec river
+        ;;
+    esac
 fi
