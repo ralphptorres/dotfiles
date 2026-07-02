@@ -155,3 +155,10 @@ spawn-sh-at-startup "mako"
 spawn-sh-at-startup "swayidle"
 spawn-sh-at-startup "wayneko --layer overlay --survive-close"
 spawn-sh-at-startup "mpd && mpd-mpris"
+
+prefer-no-csd
+
+cursor {
+    xcursor-theme "BreezeX-Dark"
+    xcursor-size 45
+}
