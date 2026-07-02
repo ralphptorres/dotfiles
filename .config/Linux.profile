@@ -14,12 +14,9 @@ export TEXMFVAR=$XDG_STATE_HOME/texmf
 export TEXMFCONFIG=$XDG_CONFIG_HOME/texmf
 export TEXMFDIST=/usr/share/texmf-dist
 
-source /usr/share/bash-completion/bash_completion
-
 if [ ${0##*/} = bash ]
 then
     . $ENV
-    . /usr/share/bash-completion/bash_completion
 fi
 
 # wm=$(cat << 'eof'

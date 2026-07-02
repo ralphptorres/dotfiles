@@ -1,5 +1,7 @@
 shopt -s autocd
 
+source /usr/share/bash-completion/bash_completion
+
 bind 'set editing-mode vi'
 bind 'set show-mode-in-prompt on'
 bind 'set vi-cmd-mode-string \1\e[2 q\2'
